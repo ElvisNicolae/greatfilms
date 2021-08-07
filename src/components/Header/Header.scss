@@ -1,5 +1,55 @@
 @import '../../sass/global.scss';
 
-.header {
+#header {
+    color: white;
     background-color: $color-primary;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+
+    .logo{
+        width: 13rem;
+
+        img {
+            width: inherit;
+        }
+    }
+
+    .first-nav-wrapper {
+        display: flex;
+        justify-content: center;
+
+        ul{
+            display: flex;
+            justify-content: center;
+            padding: 0rem 1rem;
+            
+            li{
+                padding: 0rem 0.5rem;
+            }
+        }
+    }
+
+    .second-nav-wrapper {
+        display: flex;
+        align-items: center;
+
+        & > * {
+            margin: 0rem 0.5rem;
+        }
+
+        .search-bar {
+            width: 20rem;
+            height: 1.8rem;
+        }
+
+        .log-in { 
+            font-weight: 700;
+        }
+    }
+    
 }
+
+
