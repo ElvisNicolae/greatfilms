@@ -1,5 +1,12 @@
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
+li, a{
+  text-decoration:none;
+  list-style: none;
+  color: inherit; 
+}
