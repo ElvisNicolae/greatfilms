@@ -1,13 +1,47 @@
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchTopRatedMovies } from '../../actions/topRated';
 import "./TopRatedMovies.scss";
+import Slider from '../Slider/Slider';
 
-const TopRatedMovies = ({imgLink, imgAlt, movieTitle, review, movieReleaseDate}) =>{
+const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies}) =>{
+    useEffect(()=>{
+        fetchTopRatedMovies();
+    },[fetchTopRatedMovies]);  
+
+    const fetchNewPage = (page) => {
+        fetchTopRatedMovies(page);
+    }
 
     return(
-        <div className="card movie-card">
-        
+        <div>
+            <Slider 
+                sliderTitle="Top Rated Movies" 
+                movies={topRatedMovies} 
+                link={"/top/rated"}
+                fetchNewPage={fetchNewPage}
+            />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     );
 
 }
 
-export default TopRatedMovies;
+const mapStateToProps = ({topRatedMovies}) => { 
+    return {
+        topRatedMovies
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {
+        fetchTopRatedMovies
+    }
+)(TopRatedMovies);

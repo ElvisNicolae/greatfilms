@@ -1,28 +1,17 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 import "./HomePage.scss";
-import { fetchTopRatedMovies } from '../../actions/topRated';
+import TopRatedMovies from '../TopRatedMovies/TopRatedMovies';
 
-
-const HomePage = ({ fetchTopRatedMovies, topRatedMovies}) => {
-    useEffect(()=>{
-        fetchTopRatedMovies();
-    },[fetchTopRatedMovies]);    
-
-
+const HomePage = () => {  
     return(
-        <div>
-            HomePage
+        <div className="homepage">
+            <header className="header">
+                <h1 className="header__title">Find the perfect movie to watch</h1>
+                <hr className="header__hr"/>
+            </header>
+
+            <TopRatedMovies />
         </div>
     );
 }
 
-const mapStateToProps = ({topRatedMovies}) => { 
-    return {
-        topRatedMovies
-    }
-}
-
-export default connect(mapStateToProps, {
-    fetchTopRatedMovies
-})(HomePage);
+export default HomePage;
