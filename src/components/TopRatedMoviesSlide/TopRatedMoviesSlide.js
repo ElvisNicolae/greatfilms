@@ -20,6 +20,7 @@ const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies}) =>{
                 movies={topRatedMovies} 
                 link={"/top/rated"}
                 fetchNewPage={fetchNewPage}
+                stringId={"top_rated_movies"}
             />
         </div>
     );

@@ -20,6 +20,7 @@ const TrendingMoviesSlide = ({ fetchTrendingMovies, trendingMovies}) =>{
                 movies={trendingMovies} 
                 link={"/top/rated"}
                 fetchNewPage={fetchNewPage}
+                stringId={'trending_movies'}
             />
         </div>
     );
