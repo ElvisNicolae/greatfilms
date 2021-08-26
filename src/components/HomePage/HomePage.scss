@@ -2,7 +2,16 @@
 
 .header {
     text-align: center;
-    margin: 4rem 0rem;
+    margin: 7rem 0rem 2rem;
+
+    @media (max-width: $breakpoint-tablet) {
+        margin-top: 5.5rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        margin-top: 3.6rem;
+        margin-bottom: 4rem;
+    }
 
     .header__title {
         font-size: 2.25rem;
@@ -10,11 +19,48 @@
         margin-bottom: 0.3rem;
         letter-spacing: 0.02em;
         color: rgb(236, 236, 236);
+
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 1.95rem;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
     }
 
     .header__hr {
-        border: 2px solid $color-brand;
+        border: 2px solid $color-brand-dark;
         max-width: 43rem;
         margin: auto;
+
+        @media (max-width: $breakpoint-tablet) {
+            max-width: 35rem;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            max-width: 18rem;
+        }
     }
+}
+
+.TopRatedMovies {
+    margin-bottom: 7rem;
+
+    @media (max-width: $breakpoint-mobile) {
+        margin-bottom: 9rem;
+    }
+}
+
+.TrendingMoviesSlide {
+    margin-bottom: 9rem;
+
+    @media (max-width: $breakpoint-mobile) {
+        margin-bottom: 11rem;
+    }
+}
+
+.CallToAction {
+    padding-bottom: 200px;
 }

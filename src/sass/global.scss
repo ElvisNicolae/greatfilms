@@ -8,3 +8,20 @@
         box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.253);
     }
 }
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+}
+
+.btn-primary {
+    background-color: $color-brand;
+
+    &:hover {
+        background-color: $color-brand-dark;
+    }
+}

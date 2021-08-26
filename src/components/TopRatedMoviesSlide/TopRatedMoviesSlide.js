@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopRatedMovies } from '../../actions/topRated';
-import "./TopRatedMovies.scss";
+import "./TopRatedMoviesSlide.scss";
 import Slider from '../Slider/Slider';
 
 const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies}) =>{
@@ -21,13 +21,6 @@ const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies}) =>{
                 link={"/top/rated"}
                 fetchNewPage={fetchNewPage}
             />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
         </div>
     );
 

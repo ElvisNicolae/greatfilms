@@ -1,5 +1,7 @@
 import "./HomePage.scss";
-import TopRatedMovies from '../TopRatedMovies/TopRatedMovies';
+import TopRatedMovies from '../TopRatedMoviesSlide/TopRatedMoviesSlide';
+import TrendingMoviesSlide from '../TrendingMoviesSlide/TrendingMoviesSlide';
+import CallToAction from "./CallToAction/CallToAction";
 
 const HomePage = () => {  
     return(
@@ -9,7 +11,15 @@ const HomePage = () => {
                 <hr className="header__hr"/>
             </header>
 
-            <TopRatedMovies />
+            <div className="TopRatedMovies">
+                <TopRatedMovies />
+            </div>
+            <div className="TrendingMoviesSlide">
+                <TrendingMoviesSlide />
+            </div>
+            <div className="CallToAction">
+                <CallToAction />
+            </div>
         </div>
     );
 }

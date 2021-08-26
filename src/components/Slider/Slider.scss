@@ -2,19 +2,18 @@
 
 $color-slider: rgb(202, 202, 202);
 
-.block{
-    margin-right: 1.6rem;
-    position: relative;
-    transition: all 1.15s;
-    width: 180px;
-    height: 200px;
-    background-color: rgb(195, 0, 0);
-}
-
 .slider-container{
     overflow: hidden;
     padding: 0rem 2rem 0rem 5rem;
     color: $color-slider;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding-left: 2.2rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding-left: 1.2rem;
+    }
 
     .text-container{
         display: flex;
@@ -62,12 +61,21 @@ $color-slider: rgb(202, 202, 202);
 
     .slider {
         display: flex;
+        height: 370px;
     
         .movie {
             margin-right: 1.6rem;
             position: relative;
-            transition: all 1.15s;
+            transition: all 1s;
             width: 180px;
+
+            @media (max-width: $breakpoint-tablet) {
+                width: 160px;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 110px;
+            }
 
             .movie__poster {
                 width: inherit;

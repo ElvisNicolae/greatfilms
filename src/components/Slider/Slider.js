@@ -1,36 +1,87 @@
 import {useState,useEffect} from 'react';
 import './Slider.scss';
 import { Link } from 'react-router-dom';
-import { useInView, observe  } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 
 const Slider = ({sliderTitle, movies, link, fetchNewPage}) => {
     const [position, setPosition] = useState(0);
     const [page, setPage] = useState(2);
     const {ref, inView} = useInView();
-    const movingDistance = 1430;
+    const movingDistance = 78; // vw
+    
+    // useEffect for mobile and tablet
+    useEffect(()=>{
+        const slider = document.querySelector('.slider');
+        let moving = false;
+        let touchstartPosition;
+        let currentPosition = 0;
 
+        slider.addEventListener('touchstart', e =>{
+            console.log('touch START')     
+
+            if(currentPosition<0){
+                currentPosition=0;
+            }
+
+            moving = true; 
+            touchstartPosition = e.touches[0].clientX; 
+        })
+
+        
+        slider.addEventListener('touchmove', e => {
+            if(moving){
+                let movie = document.querySelectorAll('.movie');
+                if(currentPosition >= 0){
+                    for (let i=0;i<movie.length;i++){
+                        // divided by 20 so as not to move so many pixels
+                        movie[i].style.right = `${currentPosition + (touchstartPosition-e.touches[0].clientX)/20}px`; 
+                    }
+
+                    currentPosition = currentPosition + (touchstartPosition-e.touches[0].clientX)/20;
+                }
+                
+            }
+        })
+
+        slider.addEventListener('mouseleave', e =>{
+            moving = false;
+        })
+
+        slider.addEventListener('touchend', e => {
+            moving = false;
+            let test = document.querySelector('.movie').style.right;
+        })
+    },[]);
+    
+    //useEffect for fetching new movies
     useEffect(()=>{
         if(inView){
-
             //give some time for the animation
             setTimeout(()=>{
                 fetchNewPage(page);
                 setPage(page+1);
-            },700)
-
-            console.log('fired');
+            },500)
         }
     }, [inView]);
 
-    const renderMovies = movies.map((movie, index)=>{
+    const handleLeft = () => {
+        if(position > 0){
+            setPosition(position-movingDistance);
+        }
+    }
 
+    const handleRight = () => {
+        setPosition(position+movingDistance);    
+    }
+
+    const renderMovies = movies.map((movie, index)=>{
         // if it is the last movie the element is observed
-        if(index==movies.length-1){
+        if(index===movies.length-1){
             return <div 
                 key={movie.id} 
                 className="movie"
                 style={{
-                    right: `${position}px`
+                    right: `${position}vw`
                 }}
                 ref={ref}
             >
@@ -48,7 +99,7 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage}) => {
                 key={movie.id} 
                 className="movie"
                 style={{
-                    right: `${position}px`
+                    right: `${position}vw`
                 }}
             >
                 <img className="movie__poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
@@ -60,16 +111,6 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage}) => {
             </div>
         )
     })
-
-    const handleLeft = () => {
-        if(position > 0){
-            setPosition(position-movingDistance);
-        }
-    }
-
-    const handleRight = () => {
-        setPosition(position+movingDistance);    
-    }
 
     return (
         <div className="slider-container">

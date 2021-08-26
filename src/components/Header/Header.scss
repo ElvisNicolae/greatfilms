@@ -40,6 +40,10 @@ $hover-color: $color-brand-dark;
             display: flex;
             justify-content: center;
             padding: 0rem 1rem;
+
+            @media (max-width: $breakpoint-mobile) {
+                margin: 0.35rem 0rem;
+            }
             
             li{
                 padding: 0rem 0.5rem;
