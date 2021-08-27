@@ -1,0 +1,118 @@
+@import "../../sass/global.scss";
+
+$color-slider: rgb(202, 202, 202);
+
+.slider-container{
+    overflow: hidden;
+    padding: 0rem 2rem 0rem 5rem;
+    color: $color-slider;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding-left: 2.2rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding-left: 1.2rem;
+    }
+
+    .text-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0rem;
+
+        .slider-title {
+            font-family: Tahoma, sans-serif;
+            font-size: 1.25rem;
+
+            &:hover{
+                color: white;
+
+                .slider-title__arrow {
+                    border-color: white;
+                }
+            }
+
+            .slider-title__arrow {
+                padding: 5px;
+            }
+        }
+
+        .arrow {
+            border: solid $color-slider;
+            border-width: 0 6px 6px 0;
+            display: inline-block;
+            padding: 6px;
+            margin: 0px 8px;
+        
+            &:hover{
+                cursor: pointer;
+                border-color: white;
+            }
+        }
+        
+        .right {
+            transform: rotate(-45deg);
+        }
+          
+        .left {
+            transform: rotate(135deg);
+        }
+    }
+
+    .slider {
+        display: flex;
+        height: 370px;
+    
+        .movie {
+            margin-right: 1.6rem;
+            position: relative;
+            transition: all 1s;
+            width: 180px;
+
+            @media (max-width: $breakpoint-tablet) {
+                width: 160px;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 110px;
+            }
+
+            .movie__poster {
+                width: inherit;
+                border-radius: 6px;
+            }
+
+            .movie__title {
+                color: rgb(195, 195, 195);
+                padding: 0.3rem 0rem;
+                font-weight: lighter;
+                font-size: 0.9rem;
+            }
+
+            .movie__release-date {
+                color: rgb(97, 97, 97);
+                font-size: 0.85rem;
+            }
+
+            .movie__rating-container {
+                background-color: $color-brand-dark;
+                border-radius: 3px;
+                width: 35px;
+                position: absolute;
+                top: 5px;
+                left: -5px;
+
+                .movie__rating {
+                    margin: auto;
+                    width: fit-content;
+                    color: white;
+                    padding-top: 4px;
+                    padding-bottom: 2px;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+        
+    }
+}

@@ -1,28 +1,27 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 import "./HomePage.scss";
-import { fetchTopRatedMovies } from '../../actions/topRated';
+import TopRatedMovies from '../TopRatedMoviesSlide/TopRatedMoviesSlide';
+import TrendingMoviesSlide from '../TrendingMoviesSlide/TrendingMoviesSlide';
+import CallToAction from "./CallToAction/CallToAction";
 
-
-const HomePage = ({ fetchTopRatedMovies, topRatedMovies}) => {
-    useEffect(()=>{
-        fetchTopRatedMovies();
-    },[fetchTopRatedMovies]);    
-
-
+const HomePage = () => {  
     return(
-        <div>
-            HomePage
+        <div className="homepage">
+            <header className="header">
+                <h1 className="header__title">Find the perfect movie to watch</h1>
+                <hr className="header__hr"/>
+            </header>
+
+            <div className="TopRatedMovies">
+                <TopRatedMovies />
+            </div>
+            <div className="TrendingMoviesSlide">
+                <TrendingMoviesSlide />
+            </div>
+            <div className="CallToAction">
+                <CallToAction />
+            </div>
         </div>
     );
 }
 
-const mapStateToProps = ({topRatedMovies}) => { 
-    return {
-        topRatedMovies
-    }
-}
-
-export default connect(mapStateToProps, {
-    fetchTopRatedMovies
-})(HomePage);
+export default HomePage;

@@ -4,7 +4,7 @@ import logo from '../../images/GreatFilmsLogo.png';
 
 const Header = () => {
     return(
-        <header id="header">
+        <div id="header">
             <nav className="first-nav-wrapper">
             <Link className="logo" to="/"><img className="logo" src={logo} alt="Great Films's logo" /></Link>   
                 <ul>
@@ -19,7 +19,7 @@ const Header = () => {
                 </form>  
                 <Link to="#"> <span className="log-in"> Login </span></Link>
             </nav>
-        </header>
+        </div>
     );
 }
 
