@@ -49,7 +49,7 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
             moving = false;
         });
         
-    },[]);
+    },[stringId]);
     
     //useEffect for fetching new movies
     useEffect(()=>{

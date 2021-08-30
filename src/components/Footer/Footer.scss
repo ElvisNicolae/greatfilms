@@ -1,0 +1,124 @@
+@import "../../sass/global.scss";
+
+$footer-contant-margin: 0rem 0.75rem;
+$footer-contant-margin-mobile: 4rem;
+
+.footer {
+    background-color: black;
+
+    .footer-content {
+        display: flex;
+        max-width: 1100px;
+        margin: auto;
+        justify-content: space-between;
+        padding-top: 3.5rem;
+
+        @media (max-width: $breakpoint-mobile) {
+            display: block;
+            text-align: center;
+        }
+    
+        a {
+            &:hover {
+                color: $color-brand-dark;
+            }
+        }
+    
+        ul {
+            font-size: 1.05rem;
+            
+            li {
+                margin-bottom: .5rem;
+    
+            }
+        }
+    
+        hr { 
+            border: 2px solid $color-primary-light;
+            border-radius:5px;
+            margin: 0.6rem 0rem;
+            max-width: 5.25rem;
+
+            @media (max-width: $breakpoint-mobile) {
+                margin: 0.15rem auto 0.5rem;
+                max-width: 8rem;
+            }
+        }
+    
+        .footer-content__about {
+            max-width: 25rem;
+            margin: $footer-contant-margin;
+            
+            @media (max-width: $breakpoint-mobile) {
+                margin-bottom: 4rem;
+            }
+    
+            .footer-logo img{
+                width: 15rem;
+            }
+    
+            .footer-logo__hr {
+                max-width: 7.5rem;
+            }
+            
+        }
+    
+        .footer-content__movies {
+            margin: $footer-contant-margin;
+            @media (max-width: $breakpoint-mobile) {
+                margin-bottom: $footer-contant-margin-mobile;
+            }
+        }
+    
+        .footer-content__people {
+            margin: $footer-contant-margin;    
+            @media (max-width: $breakpoint-mobile) {
+                margin-bottom: $footer-contant-margin-mobile;
+            }
+        }
+    
+        .footer-content__contact {
+            margin: $footer-contant-margin;
+            @media (max-width: $breakpoint-mobile) {
+                margin-bottom: $footer-contant-margin-mobile;              
+            }
+    
+            .contact-information{
+                display: flex;
+
+                @media (max-width: $breakpoint-mobile) {
+                    justify-content: center;
+                }
+    
+                img {
+                    width: 1.45rem;
+                    height: 24px;
+                    margin-right: 0.35rem;
+                    position: relative;
+                    bottom: 1.5px;
+                }
+            }
+        }
+    }
+
+    .attribution {
+        display: flex;
+        justify-content: center;
+        padding: 6rem .25rem 1.5rem .25rem;
+
+        @media (max-width: $breakpoint-mobile) {
+            display: block;
+            text-align: center;
+        }
+
+        .attribution__logo{
+            width: 150px;
+            margin-right: 1rem;
+        }
+
+        a {
+            color: #01b4e4;
+        }
+    }
+}
+
