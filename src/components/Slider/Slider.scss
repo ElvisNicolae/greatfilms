@@ -116,3 +116,9 @@ $color-slider: rgb(202, 202, 202);
         
     }
 }
+
+@media (max-width: $breakpoint-tablet){
+    .arrows {
+        display: none;
+    }
+}

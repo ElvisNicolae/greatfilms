@@ -1,6 +1,7 @@
 import "./HomePage.scss";
 import TopRatedMovies from '../TopRatedMoviesSlide/TopRatedMoviesSlide';
 import TrendingMoviesSlide from '../TrendingMoviesSlide/TrendingMoviesSlide';
+import UpcomingMoviesSlider from '../UpcomingMoviesSlider/UpcomingMoviesSlider';
 import CallToAction from "./CallToAction/CallToAction";
 
 const HomePage = () => {  
@@ -14,12 +15,15 @@ const HomePage = () => {
             <div className="TopRatedMovies">
                 <TopRatedMovies />
             </div>
-            <div className="TrendingMoviesSlide">
+            <div className="TrendingMovies">
                 <TrendingMoviesSlide />
+            </div>
+            <div className="UpcomingMovies">
+                <UpcomingMoviesSlider />
             </div>
             <div className="CallToAction">
                 <CallToAction />
-            </div>
+            </div>          
         </div>
     );
 }
