@@ -87,6 +87,10 @@ $color-slider: rgb(202, 202, 202);
                 padding: 0.3rem 0rem;
                 font-weight: lighter;
                 font-size: 0.9rem;
+                
+                &:hover {
+                    color: $color-brand-dark;
+                }
             }
 
             .movie__release-date {

@@ -77,38 +77,44 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
         // is visible on the screen, new movies will be fetched
 
         if(index===movies.length-1){
-            return <div 
-                key={movie.id} 
+            return  <Link 
                 className={`movie ${stringId}`}
                 style={{
                     right: `${position}vw`
                 }}
                 ref={ref}
+                key={movie.id} 
+                to={`/movie/${movie.id}`}
             >
-                <img className="movie__poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
-                <h4 className="movie__title">{movie.title}</h4>
-                <p className="movie__release-date">{movie.release_date}</p>
-                <div className="movie__rating-container">
-                    <h4 className="movie__rating">{movie.vote_average}</h4>
-                </div>
-            </div>
+                
+                    <img className="movie__poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
+                    <h4 className="movie__title">{movie.title}</h4>
+                    <p className="movie__release-date">{movie.release_date}</p>
+                    <div className="movie__rating-container">
+                        <h4 className="movie__rating">{movie.vote_average}</h4>
+                    </div>
+               
+            </Link>
         }
         
         return(
-            <div 
-                key={movie.id} 
+            <Link 
                 className={`movie ${stringId}`}
                 style={{
                     right: `${position}vw`
-                }}
+                }} 
+                key={movie.id} 
+                to={`/movie/${movie.id}`}
             >
-                <img className="movie__poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
-                <h4 className="movie__title">{movie.title}</h4>
-                <p className="movie__release-date">{movie.release_date}</p>
-                <div className="movie__rating-container">
-                    <h4 className="movie__rating">{movie.vote_average}</h4>
-                </div>
-            </div>
+                
+                    <img className="movie__poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
+                    <h4 className="movie__title">{movie.title}</h4>
+                    <p className="movie__release-date">{movie.release_date}</p>
+                    <div className="movie__rating-container">
+                        <h4 className="movie__rating">{movie.vote_average}</h4>
+                    </div>
+                
+            </Link>
         )
     })
 

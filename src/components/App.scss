@@ -4,4 +4,17 @@
     background-color: $color-primary;
     min-height: 100vh;
     color: white;
+
+    /* styles for the footer */
+
+    position: relative;
+    padding-bottom: $footer-height-desktop;
+
+    @media (max-width: $breakpoint-tablet){
+        padding-bottom: $footer-height-tablet;
+    }
+
+    @media (max-width: 720px){
+        padding-bottom: $footer-height-mobile;
+    }
 }
