@@ -50,6 +50,7 @@ $footer-contant-margin-mobile: 4rem;
             margin: $footer-contant-margin;
             
             @media (max-width: $breakpoint-mobile) {
+                margin: auto;
                 margin-bottom: 4rem;
             }
     
@@ -118,6 +119,10 @@ $footer-contant-margin-mobile: 4rem;
 
         a {
             color: #01b4e4;
+
+            &:hover { 
+                color: #0294bd;
+            }
         }
     }
 }

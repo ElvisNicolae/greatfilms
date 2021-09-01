@@ -4,7 +4,7 @@ import TrendingMoviesSlide from '../TrendingMoviesSlide/TrendingMoviesSlide';
 import UpcomingMoviesSlider from '../UpcomingMoviesSlider/UpcomingMoviesSlider';
 import CallToAction from "./CallToAction/CallToAction";
 
-const HomePage = () => {  
+const HomePage = () => { 
     return(
         <div className="homepage">
             <header className="header">

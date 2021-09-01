@@ -13,10 +13,9 @@ const Footer = () => {
                     <Link className="footer-logo" to='/'><img src={logo} alt="great films's logo" /></Link>
                     <hr className="footer-logo__hr"/>
                     <p className="about">
-                    Here you can user rows and columns
-                    to organize your footer content. Lorem
-                    ispum dolor sit amet, consecturer
-                    adispiscing elit.
+                    Here you can browse and find the best movies that you and your
+                    friends can watch. We have a wide range of genres: 
+                    from action and romance to drama and adventure.
                     </p>
                 </div>
                 <div className="footer-content__movies">
