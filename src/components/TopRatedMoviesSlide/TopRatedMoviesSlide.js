@@ -12,7 +12,7 @@ const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies, resetAction}) =>{
         return () => {
             resetAction();
         }
-    },[fetchTopRatedMovies]);  
+    },[fetchTopRatedMovies, resetAction]);  
 
     const fetchNewPage = (page) => {
         fetchTopRatedMovies(page);

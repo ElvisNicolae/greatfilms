@@ -4,7 +4,7 @@ $color-slider: rgb(202, 202, 202);
 
 .slider-container{
     overflow: hidden;
-    padding: 0rem 2rem 0rem 5rem;
+    padding: 0rem 2rem 0rem 3.5rem;
     color: $color-slider;
 
     @media (max-width: $breakpoint-tablet) {
@@ -61,13 +61,13 @@ $color-slider: rgb(202, 202, 202);
 
     .slider {
         display: flex;
-        height: 370px;
+        height: 360px;
     
         .movie {
             margin-right: 1.6rem;
             position: relative;
             transition: all 1s;
-            width: 180px;
+            width: 160px;
 
             @media (max-width: $breakpoint-tablet) {
                 width: 160px;
@@ -80,6 +80,11 @@ $color-slider: rgb(202, 202, 202);
             .movie__poster {
                 width: inherit;
                 border-radius: 6px;
+                opacity: 0.9;
+
+                &:hover {
+                    opacity: 1;
+                }
             }
 
             .movie__title {
