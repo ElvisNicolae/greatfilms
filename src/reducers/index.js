@@ -9,6 +9,6 @@ export default combineReducers({
     topRatedMovies,
     trendingMovies,
     genres,
-    getMovie,
+    movie: getMovie,
     upcomingMovies: getUpcomingMovies
 });

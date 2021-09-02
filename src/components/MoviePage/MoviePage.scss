@@ -1,1 +1,21 @@
 @import '../../sass/global.scss';
+
+.movie-container {
+    height: 1000px;
+    .movie-container__content {
+        max-width: 700px;
+        margin: auto;
+        display: flex;
+
+        .movie-poster {
+            margin-right: 1.5rem;
+        }
+
+        .movie-details {
+            
+            .movie-title {
+                font-family: tahoma;
+            }
+        }
+    }
+}

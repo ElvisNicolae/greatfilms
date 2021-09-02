@@ -11,8 +11,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Route path="/" exact component={HomePage} />
-        
-        <Route path="/movie" component={MoviePage} />
+        <Route path="/movie/:id" component={MoviePage} />
         <Footer />
       </BrowserRouter>
     </div>
