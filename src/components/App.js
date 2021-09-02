@@ -1,5 +1,6 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
+import MoviePage from './MoviePage/MoviePage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import "./App.scss";
@@ -9,9 +10,8 @@ function App() {
     <div id="app">
       <BrowserRouter>
         <Header />
-        <Route path="/" exact component={HomePage}>
-        
-        </Route>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/movie/:id" component={MoviePage} />
         <Footer />
       </BrowserRouter>
     </div>

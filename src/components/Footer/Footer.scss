@@ -5,6 +5,18 @@ $footer-contant-margin-mobile: 4rem;
 
 .footer {
     background-color: black;
+    height: $footer-height-desktop;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet){
+        height: $footer-height-tablet;
+    }
+
+    @media (max-width: 720px){
+        height: $footer-height-mobile;
+    }
 
     .footer-content {
         display: flex;
@@ -13,7 +25,7 @@ $footer-contant-margin-mobile: 4rem;
         justify-content: space-between;
         padding-top: 3.5rem;
 
-        @media (max-width: $breakpoint-mobile) {
+        @media (max-width: 720px) {
             display: block;
             text-align: center;
         }
@@ -39,7 +51,7 @@ $footer-contant-margin-mobile: 4rem;
             margin: 0.6rem 0rem;
             max-width: 5.25rem;
 
-            @media (max-width: $breakpoint-mobile) {
+            @media (max-width: 720px) {
                 margin: 0.15rem auto 0.5rem;
                 max-width: 8rem;
             }
@@ -49,7 +61,7 @@ $footer-contant-margin-mobile: 4rem;
             max-width: 25rem;
             margin: $footer-contant-margin;
             
-            @media (max-width: $breakpoint-mobile) {
+            @media (max-width: 720px) {
                 margin: auto;
                 margin-bottom: 4rem;
             }
@@ -66,28 +78,28 @@ $footer-contant-margin-mobile: 4rem;
     
         .footer-content__movies {
             margin: $footer-contant-margin;
-            @media (max-width: $breakpoint-mobile) {
+            @media (max-width: 720px) {
                 margin-bottom: $footer-contant-margin-mobile;
             }
         }
     
         .footer-content__people {
             margin: $footer-contant-margin;    
-            @media (max-width: $breakpoint-mobile) {
+            @media (max-width: 720px) {
                 margin-bottom: $footer-contant-margin-mobile;
             }
         }
     
         .footer-content__contact {
             margin: $footer-contant-margin;
-            @media (max-width: $breakpoint-mobile) {
+            @media (max-width: 720px) {
                 margin-bottom: $footer-contant-margin-mobile;              
             }
     
             .contact-information{
                 display: flex;
 
-                @media (max-width: $breakpoint-mobile) {
+                @media (max-width: 720px) {
                     justify-content: center;
                 }
     
@@ -105,9 +117,9 @@ $footer-contant-margin-mobile: 4rem;
     .attribution {
         display: flex;
         justify-content: center;
-        padding: 6rem .25rem 1.5rem .25rem;
+        padding: 6rem 1.25rem 1.5rem;
 
-        @media (max-width: $breakpoint-mobile) {
+        @media (max-width: 720px) {
             display: block;
             text-align: center;
         }
