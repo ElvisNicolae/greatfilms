@@ -9,27 +9,29 @@ const MoviePage = ({getMovie, movie}) => {
 
     useEffect(()=>{
         getMovie(id);
-    },[]);
+    },[getMovie, id]);
 
     return (
         <div>
             <div className="movie-container">
                 <div className="movie-container__content">
-                    <img className="movie-poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
+                    <img className="movie-poster" src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
                     <div className="movie-details">
                         <h1 className="movie-title">
                             {movie.title} <span className="movie-title__span">({movie.release_date})</span>
                         </h1>
                     </div>
                 </div>
+                <div className="backdrop-img" style={{backgroundImage: `url(${`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`})`}} >
+                    <div className="backdrop">
+                    </div>
+                </div>
             </div>
 
-            <div className="backdrop">
-
-            </div>
+            
 
             <div className="cast-container">
-
+                
             </div>
         </div>
     );

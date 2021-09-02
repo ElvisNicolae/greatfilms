@@ -20,17 +20,16 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
         let touchstartPosition;
         let currentPosition = 0;
 
-        slider.addEventListener('touchstart', e =>{   
+        const touchStart = e =>{   
             moving = true; 
             touchstartPosition = e.touches[0].clientX; 
 
             if(currentPosition<0){
                 currentPosition=0;
             }         
-        });
+        }
 
-        
-        slider.addEventListener('touchmove', e => {
+        const touchMove = e => {
             if(moving){
                 let movie = document.querySelectorAll(`.${stringId}`);
                 if(currentPosition >= 0){
@@ -43,12 +42,22 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
                     currentPosition = currentPosition + (touchstartPosition-e.touches[0].clientX)/20;
                 }
             }
-        });
+        }     
 
-        slider.addEventListener('touchend', e => {
+        const touchEnd = e => {
             moving = false;
-        });
+        }
+
+        slider.addEventListener('touchstart', touchStart);
+        slider.addEventListener('touchmove', touchMove);
+        slider.addEventListener('touchend', touchEnd);
         
+        return () => {
+            slider.removeEventListener('touchstart', touchStart);
+            slider.removeEventListener('touchmove', touchMove);
+            slider.removeEventListener('touchend', touchEnd);
+        }
+
     },[stringId]);
     
     //useEffect for fetching new movies
@@ -105,8 +114,7 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
                 }} 
                 key={movie.id} 
                 to={`/movie/${movie.id}`}
-            >
-                
+            >              
                     <img className="movie__poster" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
                     <h4 className="movie__title">{movie.title}</h4>
                     <p className="movie__release-date">{movie.release_date}</p>

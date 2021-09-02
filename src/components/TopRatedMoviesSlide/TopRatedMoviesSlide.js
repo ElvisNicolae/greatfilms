@@ -1,12 +1,17 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchTopRatedMovies } from '../../actions/topRated';
+import { fetchTopRatedMovies} from '../../actions/topRated';
+import { resetAction } from '../../actions/resetAction';
 import "./TopRatedMoviesSlide.scss";
 import Slider from '../Slider/Slider';
 
-const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies}) =>{
+const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies, resetAction}) =>{
     useEffect(()=>{
         fetchTopRatedMovies();
+
+        return () => {
+            resetAction();
+        }
     },[fetchTopRatedMovies]);  
 
     const fetchNewPage = (page) => {
@@ -36,6 +41,7 @@ const mapStateToProps = ({topRatedMovies}) => {
 export default connect(
     mapStateToProps,
     {
-        fetchTopRatedMovies
+        fetchTopRatedMovies,
+        resetAction
     }
 )(TopRatedMovies);
