@@ -1,6 +1,7 @@
 @import '../../../sass/global.scss';
 
-$movie-container-height: 1000px;
+$movie-container-height: 800px;
+$rating-transition: .35s;
 
 .movie-loading {
     height: $movie-container-height;
@@ -26,9 +27,12 @@ $movie-container-height: 1000px;
         .movie-poster {
             margin-right: 2.5rem;
             max-width: 300px;
+            border-radius: 4px;
+            height: 450px;
 
             @media (max-width: $breakpoint-tablet) {
                 max-width: 290px;
+                height: 430px;
                 margin-bottom: 2rem;
             }
 
@@ -36,6 +40,7 @@ $movie-container-height: 1000px;
                 max-width: 250px;
                 margin-bottom: 2rem;
                 margin-right: 0rem;
+                height: 375px;
             }
         }
 
@@ -60,18 +65,36 @@ $movie-container-height: 1000px;
 
         .movie-actions {
             display: flex;
+            margin-bottom: 4rem;
 
             .movie-rating {
                 .user-rating-container {
                     display: flex;
+                    position: relative;
                     margin: 0rem 1.75rem .75rem 0rem;
+                    transition: $rating-transition;
+
+                    &:hover {
+                        .user-rating-user-rating {
+                            color: rgb(219, 219, 219);
+                        }
+                        
+                        .user-rating {
+                            background-color: $color-brand-dark;
+                        }
+
+                        .user-rating-count {
+                            opacity: 1;
+                        }
+                    }
     
                     .user-rating {
-                        background-color: $color-brand-dark;
+                        background-color: $color-brand;
                         border-radius: 3px;
                         width: 50px;
                         height: 27px;
                         margin-right: .7rem;
+                        transition: $rating-transition;
             
                         .user-rating__rating {
                             margin: auto;
@@ -88,6 +111,20 @@ $movie-container-height: 1000px;
                         top: 3px;
                     }
                 
+                    .user-rating-count {
+                        background-color: $color-brand-darker;
+                        font-family: helvetica;
+                        padding: .7rem;
+                        width: 130px;
+                        border-radius: 4px;
+                        position: absolute;
+                        left: 48px;
+                        bottom: 25px;
+                        z-index: 1;
+                        font-weight: bold;
+                        opacity: 0;
+                        transition: $rating-transition;
+                    }
                 }
 
                 .your-rating {
@@ -110,6 +147,7 @@ $movie-container-height: 1000px;
                 }
 
                 .watch-later__text {
+                    font-size: 1.1rem;
                     position: relative;
                     left: 8px;
                     top: 1px;
@@ -119,13 +157,34 @@ $movie-container-height: 1000px;
 
             .list {
                 color: rgb(202, 202, 202);
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 position: relative;
                 bottom: 2px;
             }
             
         }
+
+        .overview {
+            margin-bottom: 3rem;
+
+            .overview__title{
+                margin-bottom: 1rem;
+            }
+        }
         
+        .money {
+            .budget {
+                display: inline-block;
+                margin-right: 14rem;
+            }
+            .revenue {
+                display: inline-block;
+            }
+
+            .budget__title, .revenue__title {
+                margin-bottom: 0.25rem;
+            }
+        }
     }
 }
 
@@ -134,7 +193,7 @@ $movie-container-height: 1000px;
     position: absolute;
     top: 0px;
     width: 100%;
-    height: 850px;
+    height: 800px;
     opacity: 0.88;
     z-index: -1;
     background-position: center;

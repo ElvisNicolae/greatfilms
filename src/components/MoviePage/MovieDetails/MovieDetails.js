@@ -7,7 +7,7 @@ import './MovieDetails.scss';
 import WatchLaterIcon from '../../../images/WatchLaterIcon.png';
 
 const MovieDetails = ({getMovie, movie}) => {
-    let {id} = useParams();
+    const {id} = useParams();
 
     useEffect(()=>{
         getMovie(id);
@@ -23,6 +23,9 @@ const MovieDetails = ({getMovie, movie}) => {
             }
             return <span key={genre.id}> {genre.name}, </span>
         })
+
+        const budget = movie.budget === 0 ? "No data" : `$${new Intl.NumberFormat().format(movie.budget)}`;
+        const revenue = movie.revenue === 0 ? "No data" : `$${new Intl.NumberFormat().format(movie.revenue)}`;
 
         return (
             <div>
@@ -45,6 +48,7 @@ const MovieDetails = ({getMovie, movie}) => {
                                         <div className="user-rating">
                                             <h4 className="user-rating__rating">{movie.vote_average}</h4>
                                         </div>
+                                        <div className="user-rating-count">{new Intl.NumberFormat().format(movie.vote_count)} Ratings</div>
                                         <p className="user-rating-user-rating">User Rating</p>
                                     </div>
 
@@ -59,6 +63,22 @@ const MovieDetails = ({getMovie, movie}) => {
 
                                 <div className="list">
                                     <h2 className="list-text">LIST</h2>
+                                </div>
+                            </div>
+
+                            <div className="overview">
+                                <h2 className="overview__title">Overview</h2>
+                                <p className="overview__description">{movie.overview}</p>
+                            </div>
+
+                            <div className="money">
+                                <div className="budget">
+                                    <h2 className="budget__title">Budget</h2>
+                                    <p className="">{budget}</p>
+                                </div>
+                                <div className="revenue">
+                                    <h2 className="revenue__title">Revenue</h2>
+                                    <p className="">{revenue}</p>
                                 </div>
                             </div>
                         </div>
