@@ -1,1 +1,9 @@
 @import '../../sass/global.scss';
+
+.MovieDetails {
+
+    @media (max-width: $breakpoint-tablet) {
+        margin-bottom: 10rem;
+    }
+    
+}

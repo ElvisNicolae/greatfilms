@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getMovie } from '../../../actions/getMovie';
 import './MovieDetails.scss';
 import WatchLaterIcon from '../../../images/WatchLaterIcon.png';
+import listIcon from '../../../images/listIcon.png';
 
 const MovieDetails = ({getMovie, movie}) => {
     const {id} = useParams();
@@ -13,6 +14,7 @@ const MovieDetails = ({getMovie, movie}) => {
         getMovie(id);
     },[getMovie, id]);
 
+    // if data is loading
     if(!movie.title){
         return <div className="movie-loading">Loading...</div>
     }
@@ -62,7 +64,12 @@ const MovieDetails = ({getMovie, movie}) => {
                                 </div>
 
                                 <div className="list">
-                                    <h2 className="list-text">LIST</h2>
+                                    <img 
+                                        src={listIcon} 
+                                        alt="list icon" 
+                                        className="list__img" 
+                                    />  
+                                    <h2 className="list__text">LIST</h2>
                                 </div>
                             </div>
 

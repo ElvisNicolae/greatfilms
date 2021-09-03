@@ -6,8 +6,12 @@ const MoviePage = () => {
 
     return (
         <div>
-            <MovieDetails />
-            <MovieCast />
+            <div className="MovieDetails">
+                <MovieDetails />
+            </div>
+            <div className="MovieCast">
+                <MovieCast />
+            </div>
         </div>
     );
 }

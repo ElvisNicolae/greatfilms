@@ -8,7 +8,7 @@ $rating-transition: .35s;
 }
 
 .movie-container {
-    height: $movie-container-height;
+    min-height: $movie-container-height;
     position: relative;
     z-index: 1;
 
@@ -67,7 +67,16 @@ $rating-transition: .35s;
             display: flex;
             margin-bottom: 4rem;
 
+            @media (max-width: $breakpoint-mobile) {
+                display: block;
+            }
+
             .movie-rating {
+                @media (max-width: $breakpoint-mobile) {
+                    width: 185px;
+                    display: inline-block;
+                }
+
                 .user-rating-container {
                     display: flex;
                     position: relative;
@@ -134,11 +143,13 @@ $rating-transition: .35s;
             }
 
             .watch-later {
-                display: flex;
+                display: inline-flex;
                 margin-right: 2rem;
 
                 @media (max-width: $breakpoint-mobile) {
                     margin-right: .25rem;
+                    position: relative;
+                    bottom: 56px;
                 }
 
                 .watch-later__icon {
@@ -160,6 +171,19 @@ $rating-transition: .35s;
                 font-size: 0.9rem;
                 position: relative;
                 bottom: 2px;
+                display: flex;
+
+                .list__img {
+                    width: 25px;
+                    height: 25px;
+                    margin-right: .25rem;
+                    position: relative;
+                    top: 5px;
+                }
+
+                @media (max-width: $breakpoint-mobile) {
+                    top: 12px;
+                }
             }
             
         }
@@ -176,6 +200,14 @@ $rating-transition: .35s;
             .budget {
                 display: inline-block;
                 margin-right: 14rem;
+
+                @media (max-width: 900px) {
+                    margin-right: 11rem;
+                }
+
+                @media (max-width: $breakpoint-mobile) {
+                    margin-right: 6.5rem;
+                }
             }
             .revenue {
                 display: inline-block;

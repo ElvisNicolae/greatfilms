@@ -1,2 +1,66 @@
 @import "../../../sass/global.scss";
 
+.fake-movie-cast {
+    height: 500px;
+}
+
+.movie-cast {
+    min-height: 500px;
+
+    .movie-cast__container {
+        max-width: 1200px;
+        margin: auto;
+
+        .top-billed-cast {
+            margin-bottom: 3rem;
+            font-size: 2.25rem;
+            margin-left: 1rem;
+        }
+
+        .cast-profiles {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 1600px;
+            padding: 0rem 1rem;
+
+            @media (max-width: 1000px) {
+                height: 1350px;
+            }
+
+            @media (max-width: $breakpoint-tablet) {
+                display: block;
+                height: auto;
+            }
+
+            .cast-profile {
+                display: flex;
+                margin-bottom: 3rem;
+                max-width: 680px;
+
+                @media (max-width: $breakpoint-mobile) {
+                    margin-bottom: 2rem;
+                }
+    
+                .cast-profile__image {
+                    border-radius: 3px;
+                    width: 180px;
+
+                    @media (max-width: 1000px) {
+                        width: 140px;
+                    }
+                }
+    
+                .cast-profile__names {
+                    margin-left: 2rem;
+                    padding-top: 7rem;
+
+                    @media (max-width: 1000px) {
+                        margin-left: 1.25rem;
+                    }
+                }
+            }
+        }
+        
+    }
+}

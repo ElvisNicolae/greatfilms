@@ -3,10 +3,10 @@ import themoviedb from '../api/themoviedb';
 
 export const getCast = id => async dispatch => {
 
-    const {data} = themoviedb.get(`/movie/${id}/credits`)
+    const {data} = await themoviedb.get(`/movie/${id}/credits`)
 
     dispatch({
         type: FETCH_CAST,
-        payload: data.results
+        payload: data
     });
 }
