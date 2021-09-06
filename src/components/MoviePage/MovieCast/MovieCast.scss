@@ -28,7 +28,7 @@
                 height: 1350px;
             }
 
-            @media (max-width: $breakpoint-tablet) {
+            @media (max-width: 750px) {
                 display: block;
                 height: auto;
             }
@@ -57,6 +57,7 @@
 
                     @media (max-width: 1000px) {
                         margin-left: 1.25rem;
+                        padding-top: 4.8rem;
                     }
                 }
             }

@@ -17,9 +17,18 @@ const MovieCast = ({getCast, movieCast}) => {
     }
     else {
 
+        let castImageHelper = 9;
+
         const renderMovieCast = movieCast.cast.map( (actor, index) => {
-            //render only the first 10 actors
-            if(index > 9){
+            //render only 10 actors
+            if(index > castImageHelper){
+                return null;
+            }
+
+            // if the current 'actor' does not have a 
+            // profile image show the next one
+            if(actor.profile_path == null) {
+                castImageHelper++;
                 return null;
             }
 

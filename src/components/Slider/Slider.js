@@ -62,7 +62,7 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
     
     //useEffect for fetching new movies
     useEffect(()=>{
-        if(inView){
+        if(inView && stringId !== "recommended_movies"){
             //give some time for the animation
             setTimeout(()=>{
                 fetchNewPage(page);
@@ -100,7 +100,7 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
                     <h4 className="movie__title">{movie.title}</h4>
                     <p className="movie__release-date">{movie.release_date}</p>
                     <div className="movie__rating-container">
-                        <h4 className="movie__rating">{movie.vote_average}</h4>
+                        <h4 className="movie__rating">{movie.vote_average.toString().substring(0,3)}</h4>
                     </div>
                
             </Link>
@@ -119,7 +119,7 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
                     <h4 className="movie__title">{movie.title}</h4>
                     <p className="movie__release-date">{movie.release_date}</p>
                     <div className="movie__rating-container">
-                        <h4 className="movie__rating">{movie.vote_average}</h4>
+                        <h4 className="movie__rating">{movie.vote_average.toString().substring(0,3)}</h4>
                     </div>
                 
             </Link>
