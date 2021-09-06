@@ -1,1 +1,13 @@
 @import '../../sass/global.scss';
+
+.MovieDetails {
+
+    @media (max-width: $breakpoint-tablet) {
+        margin-bottom: 10rem;
+    }
+    
+}
+
+.RecommendedSlider {
+    margin: 5rem 0rem 2rem;
+}

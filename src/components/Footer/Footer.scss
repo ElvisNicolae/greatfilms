@@ -4,7 +4,7 @@ $footer-contant-margin: 0rem 0.75rem;
 $footer-contant-margin-mobile: 4rem;
 
 .footer {
-    background-color: black;
+    background-color: $color-header;
     height: $footer-height-desktop;
     position: absolute;
     bottom: 0;

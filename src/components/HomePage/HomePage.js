@@ -3,8 +3,16 @@ import TopRatedMovies from '../TopRatedMoviesSlide/TopRatedMoviesSlide';
 import TrendingMoviesSlide from '../TrendingMoviesSlide/TrendingMoviesSlide';
 import UpcomingMoviesSlider from '../UpcomingMoviesSlider/UpcomingMoviesSlider';
 import CallToAction from "./CallToAction/CallToAction";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 const HomePage = () => { 
+    const location = useLocation();
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[location]);
+    
     return(
         <div className="homepage">
             <header className="header">

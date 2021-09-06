@@ -5,14 +5,16 @@ import { connect } from 'react-redux';
 import { getMovie } from '../../../actions/getMovie';
 import './MovieDetails.scss';
 import WatchLaterIcon from '../../../images/WatchLaterIcon.png';
+import listIcon from '../../../images/listIcon.png';
 
 const MovieDetails = ({getMovie, movie}) => {
-    let {id} = useParams();
+    const {id} = useParams();
 
     useEffect(()=>{
         getMovie(id);
     },[getMovie, id]);
 
+    // if data is loading
     if(!movie.title){
         return <div className="movie-loading">Loading...</div>
     }
@@ -23,6 +25,9 @@ const MovieDetails = ({getMovie, movie}) => {
             }
             return <span key={genre.id}> {genre.name}, </span>
         })
+
+        const budget = movie.budget === 0 ? "No data" : `$${new Intl.NumberFormat().format(movie.budget)}`;
+        const revenue = movie.revenue === 0 ? "No data" : `$${new Intl.NumberFormat().format(movie.revenue)}`;
 
         return (
             <div>
@@ -45,6 +50,7 @@ const MovieDetails = ({getMovie, movie}) => {
                                         <div className="user-rating">
                                             <h4 className="user-rating__rating">{movie.vote_average}</h4>
                                         </div>
+                                        <div className="user-rating-count">{new Intl.NumberFormat().format(movie.vote_count)} Ratings</div>
                                         <p className="user-rating-user-rating">User Rating</p>
                                     </div>
 
@@ -58,7 +64,28 @@ const MovieDetails = ({getMovie, movie}) => {
                                 </div>
 
                                 <div className="list">
-                                    <h2 className="list-text">LIST</h2>
+                                    <img 
+                                        src={listIcon} 
+                                        alt="list icon" 
+                                        className="list__img" 
+                                    />  
+                                    <h2 className="list__text">LIST</h2>
+                                </div>
+                            </div>
+
+                            <div className="overview">
+                                <h2 className="overview__title">Overview</h2>
+                                <p className="overview__description">{movie.overview}</p>
+                            </div>
+
+                            <div className="money">
+                                <div className="budget">
+                                    <h2 className="budget__title">Budget</h2>
+                                    <p className="">{budget}</p>
+                                </div>
+                                <div className="revenue">
+                                    <h2 className="revenue__title">Revenue</h2>
+                                    <p className="">{revenue}</p>
                                 </div>
                             </div>
                         </div>
