@@ -41,7 +41,7 @@ const MovieDetails = ({getMovie, movie}) => {
                             </h1>
 
                             <h3 className="movie-genre-and-duration">
-                                {movieGenres}
+                                {movieGenres} &#9679; {movie.runtime}
                             </h3>
 
                             <div className="movie-actions">

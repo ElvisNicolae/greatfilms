@@ -1,0 +1,147 @@
+@import "../../sass/global.scss";
+
+hr {
+    border: 2px solid $color-primary-light;
+    border-radius: 10px;
+}
+
+
+.movie-hr {
+    margin: 2.75rem 0rem;
+    border-radius: 0px;
+    border-width: 1px;
+
+    @media (max-width: $breakpoint-mobile) {
+        margin: 2rem 0rem;
+    }
+}   
+
+.movie-list__content {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0rem 1.5rem;
+
+    .list-title {
+        margin: 2.5rem 0rem 4rem;
+    }
+
+    .list-title__hr {
+        max-width: 5.5rem;
+        margin-top: .5rem;
+    }
+
+    .movies {
+        .movie {
+            display: flex;
+
+            &:hover {
+                .movie__poster {
+                    opacity: 1;
+                }
+
+                .movie__title {
+                    color: white !important;
+                }
+
+                .movie-title__original-title {
+                    color: rgb(158, 158, 158) !important;
+                }
+            }
+
+            .movie__poster {
+                width: 155px;
+                border-radius: 2px;
+                opacity: 0.92;
+                height: 233px;
+
+                @media (max-width: $breakpoint-mobile) {
+                    width: 103px;
+                    height: 155px;
+                }
+            }
+
+            .movie__content {
+                width: 950px;
+                padding: 1rem 1rem 1rem 1.7rem;
+                flex: 1;
+
+                @media (max-width: $breakpoint-mobile) {
+                    padding: 0rem 0rem 0rem 1rem;
+                }
+
+                .movie__title {
+                    font-size: 1.5rem;
+                    margin-bottom: .25rem;
+                    color: rgb(230, 230, 230);
+
+                    @media (max-width: $breakpoint-mobile) {
+                        font-size: 1.15rem;
+                    }
+
+                    .movie-title__original-title {
+                        color: rgb(139, 139, 139);
+                        font-weight: lighter;
+                        font-size: 1.2rem;
+
+                        @media (max-width: $breakpoint-mobile) {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                .movie__release-date {
+                    color: rgb(149, 149, 149);
+                    font-size: 1rem;
+                    margin-bottom: 1.6rem;
+                    font-weight: bold;
+
+                    @media (max-width: $breakpoint-mobile) {
+                        font-size: 0.86rem;
+                        margin-bottom: .5rem;
+                    }
+                }
+
+                .movie__overview {
+                    font-size: 1.06rem;
+                    color: rgb(218, 218, 218);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+
+                    @media (max-width: $breakpoint-mobile) {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .movie__rating-container {
+                background-color: $color-brand-dark;
+                border-radius: 3px;
+                margin-left: 1rem;
+                width: 45px;
+                height: 30px;
+
+                @media (max-width: $breakpoint-mobile) {
+                    width: 36px;
+                    height: 24px;
+                    margin-left: .5rem;
+                }
+
+                .movie__rating {
+                    margin: auto;
+                    width: fit-content;
+                    color: white;
+                    padding-top: 6px;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 1.1rem;
+
+                    @media (max-width: $breakpoint-mobile) {
+                        font-size: 0.96rem;
+                    }
+                }
+            }
+        }
+    }
+}
