@@ -18,7 +18,7 @@ const TrendingMoviesSlide = ({ fetchTrendingMovies, trendingMovies}) =>{
             <Slider 
                 sliderTitle="Trending Movies" 
                 movies={trendingMovies} 
-                link={"/top/rated"}
+                link={"/movies/trending"}
                 fetchNewPage={fetchNewPage}
                 stringId={'trending_movies'}
             />

@@ -2,6 +2,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
 import MoviePage from './MoviePage/MoviePage';
 import TopRatedPage from './TopRatedPage/TopRatedPage';
+import TrendingPage from './TrendingPage/TrendingPage';
+import UpcomingPage from './UpcomingPage/UpcomingPage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import "./App.scss";
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/movie/:id" component={MoviePage} />
         <Route path="/movies/top-rated" component={TopRatedPage} />
+        <Route path="/movies/trending" component={TrendingPage} />
+        <Route path="/movies/upcoming" component={UpcomingPage} />
         <Footer />
       </BrowserRouter>
     </div>

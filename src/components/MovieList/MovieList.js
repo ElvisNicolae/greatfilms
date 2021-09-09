@@ -18,7 +18,7 @@ const MovieList = ({title, movies, fetchNewPage}) => {
 
     const renderList = movies.map((movie, index) => {
         if(index === movies.length-1){
-            <React.Fragment key={movie.id}>
+            return (<React.Fragment key={movie.id}>
                 <Link 
                     ref={ref}
                     className="movie"
@@ -35,7 +35,7 @@ const MovieList = ({title, movies, fetchNewPage}) => {
                     </div>
                 </Link>
                 <hr className="movie-hr"/>
-            </React.Fragment>
+            </React.Fragment>);
         }
 
         return (

@@ -8,8 +8,9 @@ const Header = () => {
             <nav className="first-nav-wrapper">
             <Link className="logo" to="/"><img className="logo" src={logo} alt="Great Films's logo" /></Link>   
                 <ul>
-                    <li><Link to="#">Latest Movies</Link></li>
-                    <li><Link to="#">Top Rated Movies</Link></li>
+                    <li><Link to="/movies/trending">Trending</Link></li>
+                    <li><Link to="/movies/top-rated">Top Rated</Link></li>
+                    <li><Link to="/movies/upcoming">Upcoming</Link></li>
                     <li><Link to="#"><span className="watchlist">Watchlist</span></Link></li>
                 </ul>      
             </nav> 
