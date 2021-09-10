@@ -28,6 +28,14 @@ const MovieDetails = ({getMovie, movie}) => {
 
         const budget = movie.budget === 0 ? "No data" : `$${new Intl.NumberFormat().format(movie.budget)}`;
         const revenue = movie.revenue === 0 ? "No data" : `$${new Intl.NumberFormat().format(movie.revenue)}`;
+        let hours = 0;
+        let minutes = movie.runtime;
+
+        while(minutes > 60){
+            hours++;
+            minutes = minutes - 60;
+        }
+
 
         return (
             <div>
@@ -41,7 +49,7 @@ const MovieDetails = ({getMovie, movie}) => {
                             </h1>
 
                             <h3 className="movie-genre-and-duration">
-                                {movieGenres} &#9679; {movie.runtime}
+                                {movieGenres} &#9679; {hours === 0 ? null : `${hours}h`} {minutes === 0 ? null : `${minutes}m`}
                             </h3>
 
                             <div className="movie-actions">

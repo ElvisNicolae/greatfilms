@@ -8,7 +8,6 @@ const MovieList = ({title, movies, fetchNewPage}) => {
     const {ref, inView} = useInView();
 
     useEffect(()=>{
-        console.log('hello');
 
         if(inView){
             fetchNewPage(page);

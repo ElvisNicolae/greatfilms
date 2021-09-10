@@ -1,8 +1,22 @@
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Header.scss';
 import logo from '../../images/GreatFilmsLogo.png';
+import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
+import { setSearchTerm } from '../../actions/setSearchTerm';
+import { resetAction } from '../../actions/resetAction';
 
-const Header = () => {
+const Header = ({setSearchTerm, resetAction}) => {
+    const { register, handleSubmit } = useForm();
+    const history = useHistory();
+
+    const handleOnSumbit = ({searchBar}) => {
+        resetAction();
+        setSearchTerm(searchBar);
+        history.push(`/search/${searchBar}`);
+    }
+
     return(
         <div id="header">
             <nav className="first-nav-wrapper">
@@ -15,8 +29,8 @@ const Header = () => {
                 </ul>      
             </nav> 
             <nav className="second-nav-wrapper"> 
-                <form>
-                    <input placeholder="Search" className="search-bar" type="text" />
+                <form onSubmit={handleSubmit(handleOnSumbit)}>
+                    <input {...register('searchBar', {required: true})} placeholder="Search" className="search-bar" type="text" />
                 </form>  
                 <Link to="#"> <span className="log-in"> Login </span></Link>
             </nav>
@@ -24,4 +38,7 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default connect(null, {
+    setSearchTerm,
+    resetAction
+})(Header);
