@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopRatedMovies} from '../../actions/topRated';
 import { resetAction } from '../../actions/resetAction';
-import "./TopRatedMoviesSlide.scss";
-import Slider from '../Slider/Slider';
+import MovieList from '../MovieList/MovieList';
+import './TopRatedPage.scss';
+import { useLocation } from 'react-router';
 
-const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies, resetAction}) =>{
+const TopRatedPage = ({fetchTopRatedMovies, topRatedMovies, resetAction}) => {
     useEffect(()=>{
         fetchTopRatedMovies();
 
@@ -14,22 +15,25 @@ const TopRatedMovies = ({ fetchTopRatedMovies, topRatedMovies, resetAction}) =>{
         }
     },[fetchTopRatedMovies, resetAction]);  
 
+    const location = useLocation();
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[location]);
+
     const fetchNewPage = (page) => {
         fetchTopRatedMovies(page);
     }
 
-    return(
+    return (
         <div>
-            <Slider 
-                sliderTitle="Top Rated Movies" 
-                movies={topRatedMovies} 
-                link={"/movies/top-rated"}
+            <MovieList 
+                title={"Top Rated Movies"}
+                movies={topRatedMovies}
                 fetchNewPage={fetchNewPage}
-                stringId={"top_rated_movies"}
             />
         </div>
     );
-
 }
 
 const mapStateToProps = ({topRatedMovies}) => { 
@@ -44,4 +48,4 @@ export default connect(
         fetchTopRatedMovies,
         resetAction
     }
-)(TopRatedMovies);
+)(TopRatedPage);

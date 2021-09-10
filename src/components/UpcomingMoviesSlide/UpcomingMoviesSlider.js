@@ -18,7 +18,7 @@ const UpcomingMoviesSlider = ( {upcomingMovies, storeUpcomingMovies}) => {
             <Slider 
                 sliderTitle = {"Upcoming Movies"}
                 movies={storeUpcomingMovies}
-                link={"/upcoming"}
+                link={"/movies/upcoming"}
                 sliderId={"upcoming_movies"}
                 fetchNewPage={fetchNewPage}
             />

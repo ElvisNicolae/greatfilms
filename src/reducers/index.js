@@ -6,6 +6,8 @@ import getMovie from './getMovieReducer';
 import getUpcomingMovies from "./getUpcomingMoviesReducer";
 import getRecommended from "./getRecommendedReducer";
 import getCastReducer from "./getCastReducer";
+import searchMovieReducer from "./searchMovieReducer";
+import setSearchTermReducer from "./setSearchTermReducer";
 
 export default combineReducers({
     topRatedMovies,
@@ -14,5 +16,7 @@ export default combineReducers({
     movie: getMovie,
     upcomingMovies: getUpcomingMovies,
     movieCast: getCastReducer,
-    recommendedMovies: getRecommended
+    recommendedMovies: getRecommended,
+    searchData: searchMovieReducer,
+    searchTerm: setSearchTermReducer
 });

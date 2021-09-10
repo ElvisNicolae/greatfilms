@@ -6,3 +6,5 @@ export const FETCH_UPCOMING = "FETCH_UPCOMING";
 export const RESET_ACTION = "RESET_ACTION";
 export const FETCH_CAST = "FETCH_CAST";
 export const FETCH_RECOMMENDED = "FETCH_RECOMMENDED";
+export const SEARCH_MOVIE = "SEARCH_MOVIE";
+export const SET_SEARCH_TERM = "SET_SEARCH_TERM";

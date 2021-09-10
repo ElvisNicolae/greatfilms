@@ -1,7 +1,7 @@
 import "./HomePage.scss";
 import TopRatedMovies from '../TopRatedMoviesSlide/TopRatedMoviesSlide';
 import TrendingMoviesSlide from '../TrendingMoviesSlide/TrendingMoviesSlide';
-import UpcomingMoviesSlider from '../UpcomingMoviesSlider/UpcomingMoviesSlider';
+import UpcomingMoviesSlider from '../UpcomingMoviesSlide/UpcomingMoviesSlider';
 import CallToAction from "./CallToAction/CallToAction";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';

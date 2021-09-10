@@ -1,6 +1,6 @@
 import MovieDetails from './MovieDetails/MovieDetails';
 import MovieCast from './MovieCast/MovieCast';
-import RecommendedSlider from '../RecommendedSlider/RecommendedSlider';
+import RecommendedSlider from '../RecommendedSlide/RecommendedSlider';
 import './MoviePage.scss';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';

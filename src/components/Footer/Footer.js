@@ -14,7 +14,7 @@ const Footer = () => {
                     <hr className="footer-logo__hr"/>
                     <p className="about">
                     Here you can browse and find the best movies that you and your
-                    friends can watch. We have a wide range of genres: 
+                    friends can watch; We have a wide range of genres: 
                     from action and romance to drama and adventure.
                     </p>
                 </div>
@@ -22,9 +22,9 @@ const Footer = () => {
                     <Link to="/"><h1>Movies</h1></Link>
                     <hr />
                     <ul>
-                        <Link to="/"><li>Popular</li></Link>
-                        <Link to="/"><li>Top Rated</li></Link>
-                        <Link to="/"><li>Upcoming</li></Link>
+                        <Link to="/movies/trending"><li>Trending</li></Link>
+                        <Link to="/movies/top-rated"><li>Top Rated</li></Link>
+                        <Link to="/movies/upcoming"><li>Upcoming</li></Link>
                     </ul>
                 </div>
                 <div className="footer-content__people">
