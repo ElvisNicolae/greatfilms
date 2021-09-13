@@ -1,0 +1,12 @@
+@import '../../sass/global.scss';
+
+.access-denied { 
+    text-align: center;
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 6rem auto 3rem;
+
+    .greatfilms { 
+        color: $color-brand-light;
+    }
+}

@@ -5,6 +5,7 @@ import TopRatedPage from './TopRatedPage/TopRatedPage';
 import TrendingPage from './TrendingPage/TrendingPage';
 import UpcomingPage from './UpcomingPage/UpcomingPage';
 import SearchPage from './SearchPage/SearchPage';
+import RequestToken from './Authentication/RequestToken';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import "./App.scss";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/movies/trending" component={TrendingPage} />
         <Route path="/movies/upcoming" component={UpcomingPage} />
         <Route path="/search/:term" component={SearchPage} />
+        <Route path="/approved" component={RequestToken} />
         <Footer />
       </BrowserRouter>
     </div>
