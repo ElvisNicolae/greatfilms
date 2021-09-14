@@ -1,0 +1,58 @@
+@import "../../../sass/global.scss";
+
+.login {
+    max-width: 450px;
+    background-color: rgb(243, 243, 243);
+    color: black;
+    margin: 6rem auto 13rem;
+
+    @media (max-width: $breakpoint-tablet){
+        margin-bottom: 11rem;
+    }
+
+    .login__title {
+        font-size: 1.7rem;
+        background-color: $color-header;
+        color: white;
+        padding: 1.5rem;
+        margin-bottom: .5rem;
+    }
+
+    .login__form {
+        padding: 1.5rem;
+
+        .login__error {
+            color: #ca0a44;
+            font-size: 1.35rem;
+            position: relative;
+            bottom: 0.6rem;
+        }
+
+        label {
+            font-size: 1.15rem;
+        }
+        
+        input[type=text], input[type=password] {
+            width: 100%;
+            display: block;
+            padding: .7rem;
+            margin: 1rem 0rem;
+        }
+
+        .login__submit-button {
+            margin-top: .7rem;
+            width: 6rem;
+            padding: .5rem .75rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: $color-brand-dark;
+            border: none;
+            font-family: sans-serif;
+
+            &:hover {
+                background-color: #0c9444;
+            }
+        }
+    }
+}

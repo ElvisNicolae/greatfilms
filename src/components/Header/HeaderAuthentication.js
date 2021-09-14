@@ -13,7 +13,7 @@ const HeaderAuthentication = ({getAccount, accountDetails}) => {
         if(cookie){
             getAccount();
         }
-    }, [getAccount]);
+    }, [getAccount, cookie]);
 
     const handleSignUpClick = async () => {
         const {data} = await themoviedb.get("/authentication/token/new"); 
@@ -22,7 +22,7 @@ const HeaderAuthentication = ({getAccount, accountDetails}) => {
     }
 
     const handleLogOutClick = () => {
-        document.cookie = "sessionId=; expires=Thu, 01 Jan 1971 00:00:00 UTC;";
+        document.cookie = "sessionId=; expires=Thu, 01 Jan 1971 00:00:00 UTC; path=/";
         window.location.reload();
     }
 
@@ -37,7 +37,7 @@ const HeaderAuthentication = ({getAccount, accountDetails}) => {
 
     return (
         <React.Fragment>
-            <Link className="links" to="#"> <span className="login"> Login </span></Link>
+            <Link className="links" to="/login"> <span className="login-header"> Login </span></Link>
             <Link className="links" to="#"> <span onClick={handleSignUpClick} className="sign-up"> Sign up </span></Link>
         </React.Fragment>
     );  

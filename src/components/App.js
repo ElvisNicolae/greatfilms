@@ -8,6 +8,7 @@ import SearchPage from './SearchPage/SearchPage';
 import RequestToken from './Authentication/RequestToken';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import Login from './Authentication/Login/Login';
 import "./App.scss";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/movies/upcoming" component={UpcomingPage} />
         <Route path="/search/:term" component={SearchPage} />
         <Route path="/approved" component={RequestToken} />
+        <Route path="/login" component={Login} />
         <Footer />
       </BrowserRouter>
     </div>

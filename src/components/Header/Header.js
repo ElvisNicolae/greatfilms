@@ -39,7 +39,12 @@ const Header = ({setSearchTerm, resetAction}) => {
             </nav> 
             <nav className="second-nav-wrapper"> 
                 <form onSubmit={handleSubmit(handleOnSumbit)}>
-                    <input {...register('searchBar', {required: true})} placeholder="Search" className="search-bar" type="text" />
+                    <input 
+                        {...register('searchBar', {required: true})}
+                        placeholder="Search" 
+                        className="search-bar" 
+                        type="text" 
+                    />
                 </form>  
                 <HeaderAuthentication />
             </nav>
