@@ -18,7 +18,7 @@ const RateModal = ({movieTitle, onModalClick, movieId, getAccountStates, account
             setFill(accountStates.rated.value);
             setScore(accountStates.rated.value);
         }
-    }, []);
+    }, [accountStates.rated]);
 
     const onStarHover = (index) => {
         setFill(index);
@@ -36,7 +36,7 @@ const RateModal = ({movieTitle, onModalClick, movieId, getAccountStates, account
     })
 
     const handleRateButtonClick = async () => {
-        const {data} = await themoviedb.post(`/movie/${movieId}/rating`, {
+        await themoviedb.post(`/movie/${movieId}/rating`, {
             value: score   
         }, 
         {
@@ -53,7 +53,7 @@ const RateModal = ({movieTitle, onModalClick, movieId, getAccountStates, account
     }
 
     const handleRemoveRatingButtonClick = async () => {
-        const { data } = await themoviedb.delete(`/movie/${movieId}/rating`, {
+        await themoviedb.delete(`/movie/${movieId}/rating`, {
             params: {
                 session_id: sessionId
             }

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getMovie } from '../../../actions/getMovie';
 import './MovieDetails.scss';
-import WatchLaterIcon from '../../../images/WatchLaterIcon.png';
+import WatchLaterButton from './WatchLaterButton';
 import listIcon from '../../../images/listIcon.png';
 import RateModal from '../../Modals/RateModal';
 import RateStarFill from '../../../images/RateStarFill.png';
@@ -80,10 +80,9 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
                                     </div>
                                 </div>
 
-                                <div className="watch-later">
-                                    <img className="watch-later__icon" src={WatchLaterIcon} alt="Watch Later Icon" />
-                                    <h3 className="watch-later__text">Watch Later</h3>
-                                </div>
+                                
+                                <WatchLaterButton movieId={movie.id}/>
+                                
 
                                 <div className="list">
                                     <img 

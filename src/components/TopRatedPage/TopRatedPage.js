@@ -7,19 +7,19 @@ import './TopRatedPage.scss';
 import { useLocation } from 'react-router';
 
 const TopRatedPage = ({fetchTopRatedMovies, topRatedMovies, resetAction}) => {
+    const location = useLocation();
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[location]);
+
     useEffect(()=>{
         fetchTopRatedMovies();
 
         return () => {
             resetAction();
         }
-    },[fetchTopRatedMovies, resetAction]);  
-
-    const location = useLocation();
-
-    useEffect(()=>{
-        window.scrollTo(0, 0);
-    },[location]);
+    },[fetchTopRatedMovies, resetAction]);
 
     const fetchNewPage = (page) => {
         fetchTopRatedMovies(page);

@@ -16,6 +16,18 @@
         color: white;
         padding: 1.5rem;
         margin-bottom: .5rem;
+
+        .login__title-span-text {
+            margin-top: .5rem;
+            display: block;
+            font-size: 1rem;
+            color: rgb(146, 146, 146);
+
+            .login__title-span-click {
+                cursor: pointer;
+                color: $color-brand-darker;
+            }
+        }
     }
 
     .login__form {

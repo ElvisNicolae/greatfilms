@@ -1,13 +1,19 @@
 import "./Login.scss";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import themoviedb from "../../../api/themoviedb";
 import { useState } from 'react';
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const [error, setErorr] = useState(false);
     const history = useHistory();
+    const location = useLocation();
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[location]);
 
     const onSubmit = async ({username, password}) => {
         try{
@@ -34,9 +40,19 @@ const Login = () => {
         }
     }
 
+    const handleSignUpClick = async () => {
+        const {data} = await themoviedb.get("/authentication/token/new"); 
+    
+        window.location.href = `https://www.themoviedb.org/authenticate/${data.request_token}?redirect_to=http://localhost:3000/approved`;
+    }
+
     return (
         <div className="login">
-            <h1 className="login__title">Login</h1>
+            <h1 className="login__title">
+                Login <span className="login__title-span-text">
+                  No account? <span className="login__title-span-click" onClick={handleSignUpClick}>Create one!</span>
+                </span> 
+            </h1>
             <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                 {error ? <h2 className="login__error">Incorrect username or password.</h2> : null}
                 <label className="login__username">

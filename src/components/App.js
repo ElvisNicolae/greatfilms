@@ -9,6 +9,7 @@ import RequestToken from './Authentication/RequestToken';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Login from './Authentication/Login/Login';
+import WatchlistPage from './WatchlistPage/WatchlistPage';
 import "./App.scss";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/search/:term" component={SearchPage} />
         <Route path="/approved" component={RequestToken} />
         <Route path="/login" component={Login} />
+        <Route path="/movies/watchlist" component={WatchlistPage}/>
         <Footer />
       </BrowserRouter>
     </div>
