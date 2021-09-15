@@ -9,6 +9,7 @@ import getCastReducer from "./getCastReducer";
 import searchMovieReducer from "./searchMovieReducer";
 import setSearchTermReducer from "./setSearchTermReducer";
 import getAccountReducer from "./getAccountReducer";
+import getAccountStatesReducer from "./getAccountStatesReducer";
 
 export default combineReducers({
     topRatedMovies,
@@ -20,5 +21,6 @@ export default combineReducers({
     recommendedMovies: getRecommended,
     searchData: searchMovieReducer,
     searchTerm: setSearchTermReducer,
-    accountDetails: getAccountReducer
+    accountDetails: getAccountReducer,
+    accountStates: getAccountStatesReducer
 });
