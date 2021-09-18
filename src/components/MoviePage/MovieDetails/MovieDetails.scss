@@ -136,20 +136,49 @@ $rating-transition: .35s;
                     }
                 }
 
-                .your-rating {
-                    position: relative;
-                    left: 30px
+                .your-rating-container {
+                    cursor: pointer;
+                    width: 100px;
+                    padding: .35rem .5rem;
+
+                    &:hover {
+                        background-color: rgba(rgb(0, 0, 0), 0.1);
+                        border-radius: 8px;
+                    }
+
+                    .your-rating {
+                        position: relative;
+                        left: 14px;
+                        bottom: 5px;
+                        display: inline-block;
+                    }
+                    .your-rating--star {
+                        position: relative;
+                        left: 19px;
+                        width: 33px;
+                        height: 33px;
+                    }
                 }
+                
             }
 
             .watch-later {
                 display: inline-flex;
                 margin-right: 2rem;
+                cursor: pointer;
+                height: 26px;
+                position: relative;
+
+                &:hover {
+                    .watch-later__text {
+                        color: rgb(212, 212, 212);  
+                    }
+                }
 
                 @media (max-width: $breakpoint-mobile) {
                     margin-right: .25rem;
                     position: relative;
-                    bottom: 56px;
+                    bottom: 72px;
                 }
 
                 .watch-later__icon {
@@ -164,6 +193,25 @@ $rating-transition: .35s;
                     top: 1px;
                     color: rgb(231, 231, 231);
                 }
+
+                .watch-later__logged-in {
+                    background-color: $color-primary-light;
+                    border-radius: 8px;
+                    padding: 1rem;
+                    position: absolute;
+                    bottom: 23px;
+                    left: 30px;
+                    width: max-content;
+                    color: $color-blue-light;
+
+                    @media (max-width: $breakpoint-mobile){
+                        font-size: 0.85rem;
+                        padding: .75rem;
+                        left: 0px;
+                        bottom: 27px;
+                    }
+                }
+                
             }
 
             .list {

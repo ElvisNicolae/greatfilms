@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getMovie } from '../../../actions/getMovie';
 import './MovieDetails.scss';
-import WatchLaterIcon from '../../../images/WatchLaterIcon.png';
+import WatchLaterButton from './WatchLaterButton';
 import listIcon from '../../../images/listIcon.png';
+import RateModal from '../../Modals/RateModal';
+import RateStarFill from '../../../images/RateStarFill.png';
+import getAccountStates from '../../../actions/getAccountStates';
 
-const MovieDetails = ({getMovie, movie}) => {
+const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
+    const [rateModalVisible, setRateModalVisible] = useState(false);
     const {id} = useParams();
 
     useEffect(()=>{
         getMovie(id);
     },[getMovie, id]);
+
+    useEffect(()=>{
+        getAccountStates(id);
+    },[getAccountStates, id]);
+
+    const onRateClick = () => {
+        setRateModalVisible(!rateModalVisible);
+    }
 
     // if data is loading
     if(!movie.title){
@@ -35,7 +47,6 @@ const MovieDetails = ({getMovie, movie}) => {
             hours++;
             minutes = minutes - 60;
         }
-
 
         return (
             <div>
@@ -61,15 +72,17 @@ const MovieDetails = ({getMovie, movie}) => {
                                         <div className="user-rating-count">{new Intl.NumberFormat().format(movie.vote_count)} Ratings</div>
                                         <p className="user-rating-user-rating">User Rating</p>
                                     </div>
-
-                                    <div className="your-rating-description">Your Rating</div>
-                                    <h2 className="your-rating">0</h2>
+                                    
+                                    <div className="your-rating-container" onClick={onRateClick}>
+                                        <div className="your-rating-description">Your Rating</div>
+                                        <h2 className="your-rating">{accountStates.rated ? accountStates.rated.value : 0}</h2>
+                                        <img className="your-rating--star" src={RateStarFill} alt="star" />
+                                    </div>
                                 </div>
 
-                                <div className="watch-later">
-                                    <img className="watch-later__icon" src={WatchLaterIcon} alt="Watch Later Icon" />
-                                    <h3 className="watch-later__text">Watch Later</h3>
-                                </div>
+                                
+                                <WatchLaterButton movieId={movie.id}/>
+                                
 
                                 <div className="list">
                                     <img 
@@ -103,21 +116,20 @@ const MovieDetails = ({getMovie, movie}) => {
                         <div className="backdrop"></div>
                     </div>
                 </div>
-
-                
-
-                <div className="cast-container">
-                    
-                </div>
+                {rateModalVisible ? <RateModal movieTitle={movie.title} movieId={movie.id} onModalClick={onRateClick}/> : null}
             </div>
         );
     }
 }
 
-const mapStateToProps = ({movie}) => {
+const mapStateToProps = ({movie, accountStates}) => {
     return {
-        movie
+        movie,
+        accountStates
     }
 }
 
-export default connect(mapStateToProps, { getMovie })(MovieDetails);
+export default connect(mapStateToProps, {
+    getMovie,
+    getAccountStates 
+})(MovieDetails);

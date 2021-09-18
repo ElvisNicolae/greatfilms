@@ -5,8 +5,9 @@ import UpcomingMoviesSlider from '../UpcomingMoviesSlide/UpcomingMoviesSlider';
 import CallToAction from "./CallToAction/CallToAction";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
+import { connect } from 'react-redux';
 
-const HomePage = () => { 
+const HomePage = ({accountDetails}) => { 
     const location = useLocation();
 
     useEffect(()=>{
@@ -29,11 +30,18 @@ const HomePage = () => {
             <div className="UpcomingMovies">
                 <UpcomingMoviesSlider />
             </div>
-            <div className="CallToAction">
+
+            {accountDetails.username ? null : <div className="CallToAction">
                 <CallToAction />
-            </div>          
+            </div> } 
         </div>
     );
 }
 
-export default HomePage;
+const mapStateToProps = ({accountDetails}) => {
+    return { 
+        accountDetails
+    }
+}
+
+export default connect(mapStateToProps)(HomePage);

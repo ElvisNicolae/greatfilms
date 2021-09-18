@@ -1,7 +1,14 @@
 import './CallToAction.scss';
 import StackedMovies from '../../../images/StackedMovies.png';
+import themoviedb from '../../../api/themoviedb';
 
 const CallToAction = () => {
+    const handleSignUpClick = async () => {
+        const {data} = await themoviedb.get("/authentication/token/new"); 
+    
+        window.location.href = `https://www.themoviedb.org/authenticate/${data.request_token}?redirect_to=http://localhost:3000/approved`;
+    }
+
     return (
         <div className="container">
             <div className="content">
@@ -15,7 +22,7 @@ const CallToAction = () => {
                         search, and create lists with the movies you’ve watched
                         or you’d love to watch, and share them with your friends!
                     </p>
-                    <button className="btn btn-primary call-to-action-btn">CREATE FREE ACCOUNT</button>
+                    <button className="btn btn-primary call-to-action-btn" onClick={handleSignUpClick}>CREATE FREE ACCOUNT</button>
                 </div>
             </div>
         </div>

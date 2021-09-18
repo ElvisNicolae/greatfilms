@@ -1,0 +1,95 @@
+@import "../../sass/global.scss";
+
+.modal {   
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-exit {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(rgb(0, 0, 0), 0.95);
+        position: absolute;
+        z-index: -1;
+    }
+
+    .modal-content {
+        width: 500px;
+        background-color: $color-primary;
+        padding: 2.5rem;
+        text-align: center;
+
+        @media (max-width: $breakpoint-mobile){
+            width: 90vw;
+            padding: 1.5rem 0rem;
+        }
+
+        .modal-elements {
+            
+            .modal__title {
+                margin-bottom: 1rem;
+                font-weight: lighter;
+                font-family: tahoma;
+            }
+
+            .modal__movie-title {
+                margin-bottom: 1.5rem;
+                letter-spacing: 1.25px;
+            }
+
+            .modal__stars {
+                margin-bottom: 1.5rem;
+
+                .modal__star {
+                    width: 32px;
+                    height: 32px;
+                    margin: 0rem .2rem;
+
+                    @media (max-width: $breakpoint-mobile){
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
+            }
+
+            .modal__score {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .modal__button {
+                padding: .5rem;
+                width: 400px;
+                background-color: rgb(46, 46, 46);
+                border-radius: 4px;
+                border: none;
+                color: white;
+                font-size: 1rem;
+
+                @media (max-width: $breakpoint-mobile){
+                    width: 69vw;
+                }
+
+                &:hover {
+                    background-color: rgb(41, 41, 41);    
+                }
+            }
+
+            .modal__button--remove {
+                margin-top: .75rem;
+                background-color: inherit;
+
+                &:hover {
+                    background-color: rgba(rgb(0, 0, 0), 0.15);
+                }
+            }
+        }
+    }
+}
