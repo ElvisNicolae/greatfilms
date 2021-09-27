@@ -59,8 +59,8 @@ const MovieList = ({title, movies, fetchNewPage}) => {
     });
 
     return (
-        <div className="movie-list">
-            <div className="movie-list__content">
+        <div className="movie-list-container">
+            <div className="movie-list">
                 <h1 className="list-title">
                     {title}
                     <hr className="list-title__hr" />

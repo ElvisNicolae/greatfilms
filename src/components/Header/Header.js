@@ -33,7 +33,7 @@ const Header = ({setSearchTerm, resetAction}) => {
                             <li><Link className="links" to="/movies/upcoming">Upcoming</Link></li>
                         </ul>
                     </li>
-                    <li><Link className="links" to="#">People</Link></li>
+                    <li><Link className="links" to="/people">People</Link></li>
                     <li><Link className="links" to="/movies/watchlist"><span className="watchlist">Watchlist</span></Link></li>
                 </ul>      
             </nav> 

@@ -1,0 +1,51 @@
+@import "../../sass/global.scss";
+
+.popular-people {
+    padding-top: 3rem;
+    min-height: 90vh;
+    max-width: 1300px;
+    margin: auto;
+
+    .popular-people__title {
+        margin-bottom: 2rem;
+    }
+
+    .popular-people__cards {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: auto auto auto auto auto;
+    
+        .popular-people-card {
+            .popular-people-card__profile-img {
+
+            }
+
+            .popular-people-card__text {
+                padding: 0.45rem 0.45rem 0.45rem 0rem;
+
+                .popular-people-card__name {
+                    color: rgb(226, 226, 226);
+                    font-size: 1.15rem;
+                }
+
+                .popular-people-card__popularity {
+                    color: rgb(175, 175, 175);
+                }
+            }
+
+            &:hover {
+                .popular-people-card__profile-img {
+                    opacity: 0.91;
+                }
+
+                .popular-people-card__name {
+                    color: rgb(203, 203, 203);
+                }
+
+                .popular-people-card__popularity {
+                    color: rgb(153, 153, 153);
+                }
+            }
+        }
+    }
+}
