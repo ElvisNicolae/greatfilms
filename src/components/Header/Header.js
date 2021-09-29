@@ -41,7 +41,7 @@ const Header = ({setSearchTerm, resetAction}) => {
                 <form onSubmit={handleSubmit(handleOnSumbit)}>
                     <input 
                         {...register('searchBar', {required: true})}
-                        placeholder="Search" 
+                        placeholder="Search movies" 
                         className="search-bar" 
                         type="text" 
                     />

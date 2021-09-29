@@ -1,10 +1,10 @@
 @import "../../sass/global.scss";
 
 .popular-people {
-    padding-top: 3rem;
     min-height: 90vh;
-    max-width: 1300px;
+    max-width: 1250px;
     margin: auto;
+    padding: 3rem 1.5rem 1.5rem;
 
     .popular-people__title {
         margin-bottom: 2rem;
@@ -12,12 +12,43 @@
 
     .popular-people__cards {
         display: grid;
-        grid-gap: 2rem;
+        grid-gap: 1rem;
         grid-template-columns: auto auto auto auto auto;
+        justify-content: space-between;
+
+        @media (max-width: 1060px) {
+            grid-template-columns: auto auto auto auto;
+        }
+
+        @media (max-width: $breakpoint-tablet){
+            grid-template-columns: auto auto auto;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            grid-template-columns: auto auto;
+        }
     
         .popular-people-card {
-            .popular-people-card__profile-img {
+            width: 184px;
 
+            @media (max-width: 1060px) {
+                width: 163px;
+            }
+
+            @media (max-width: 600px) {
+                width: 135px;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 150px;
+            }
+
+            @media (max-width: 350px) {
+                width: 130px;
+            }
+
+            .popular-people-card__profile-img {
+                width: inherit;
             }
 
             .popular-people-card__text {

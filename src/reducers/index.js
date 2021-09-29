@@ -12,6 +12,8 @@ import getAccountReducer from "./getAccountReducer";
 import getAccountStatesReducer from "./getAccountStatesReducer";
 import getWatchlistReducer from './getWatchlistReducer';
 import getPopularPeopleReducer from "./getPopularPeopleReducer";
+import getPersonDetailsReducer from './getPersonDetailsReducer';
+import getPersonCreditsReducer from './getPersonCreditsReducer';
 
 export default combineReducers({
     topRatedMovies,
@@ -26,5 +28,7 @@ export default combineReducers({
     accountDetails: getAccountReducer,
     accountStates: getAccountStatesReducer,
     watchlist: getWatchlistReducer,
-    popularPeople: getPopularPeopleReducer
+    popularPeople: getPopularPeopleReducer,
+    personDetails: getPersonDetailsReducer,
+    personCredits: getPersonCreditsReducer
 });
