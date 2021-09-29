@@ -23,6 +23,7 @@
             flex-wrap: wrap;
             height: 1600px;
             padding: 0rem 1rem;
+            overflow: hidden;
 
             @media (max-width: 1000px) {
                 height: 1350px;
