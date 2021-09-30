@@ -9,9 +9,11 @@ import listIcon from '../../../images/listIcon.png';
 import RateModal from '../../Modals/RateModal';
 import RateStarFill from '../../../images/RateStarFill.png';
 import getAccountStates from '../../../actions/getAccountStates';
+import ListModal from '../../Modals/ListModal';
 
 const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
     const [rateModalVisible, setRateModalVisible] = useState(false);
+    const [listModalVisible, setListModalVisible] = useState(false);
     const {id} = useParams();
 
     useEffect(()=>{
@@ -24,6 +26,12 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
 
     const onRateClick = () => {
         setRateModalVisible(!rateModalVisible);
+        document.querySelector("body").style.overflowY = rateModalVisible ? "visible" : "hidden";
+    }
+
+    const onListClick = () => {
+        setListModalVisible(!listModalVisible);
+        document.querySelector("body").style.overflowY = listModalVisible ? "visible" : "hidden";
     }
 
     // if data is loading
@@ -84,7 +92,7 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
                                 <WatchLaterButton movieId={movie.id}/>
                                 
 
-                                <div className="list">
+                                <div className="list" onClick={onListClick}>
                                     <img 
                                         src={listIcon} 
                                         alt="list icon" 
@@ -117,6 +125,7 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
                     </div>
                 </div>
                 {rateModalVisible ? <RateModal movieTitle={movie.title} movieId={movie.id} onModalClick={onRateClick}/> : null}
+                {listModalVisible ? <ListModal movie={movie} onModalClick={onListClick}/> : null}
             </div>
         );
     }

@@ -121,7 +121,7 @@ $rating-transition: .35s;
                     }
                 
                     .user-rating-count {
-                        background-color: $color-brand-darker;
+                        background-color: $color-blue-darker;
                         font-family: helvetica;
                         padding: .7rem;
                         width: 130px;
@@ -215,11 +215,17 @@ $rating-transition: .35s;
             }
 
             .list {
-                color: rgb(202, 202, 202);
+                color: rgb(206, 206, 206);
                 font-size: 0.9rem;
                 position: relative;
                 bottom: 2px;
                 display: flex;
+                cursor: pointer;
+                height: 26px;
+
+                &:hover {
+                    color: rgb(172, 172, 172);
+                }
 
                 .list__img {
                     width: 25px;
