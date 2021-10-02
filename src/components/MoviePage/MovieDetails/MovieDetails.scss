@@ -24,23 +24,57 @@ $rating-transition: .35s;
             padding-top: 2rem;
         }
 
-        .movie-poster {
-            margin-right: 2.5rem;
-            max-width: 300px;
-            border-radius: 4px;
-            height: 450px;
+        .movie-poster-container {
+            position: relative;
+            height: fit-content;
 
-            @media (max-width: $breakpoint-tablet) {
-                max-width: 290px;
-                height: 430px;
-                margin-bottom: 2rem;
+            &:hover {
+                .movie-poster-container__trailer-text {
+                    opacity: 1;
+                }
+
+                .movie-poster {
+                    filter: blur(4px);
+                    opacity: 0.7;
+                }
             }
 
-            @media (max-width: $breakpoint-mobile) {
-                max-width: 250px;
-                margin-bottom: 2rem;
-                margin-right: 0rem;
-                height: 375px;
+            .movie-poster-container__trailer-text  {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate( -65%, -50% );
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+                text-shadow: 2px 1.5px #000000;
+                opacity: 0;
+                cursor: pointer;
+
+                @media (max-width: $breakpoint-mobile){
+                    font-size: 1.2rem;
+                    transform: translate( -50%, -100% );
+                }
+            }
+
+            .movie-poster {
+                margin-right: 2.5rem;
+                max-width: 300px;
+                border-radius: 4px;
+                height: 450px;
+                cursor: pointer;
+    
+                @media (max-width: $breakpoint-tablet) {
+                    max-width: 290px;
+                    height: 430px;
+                    margin-bottom: 2rem;
+                }
+    
+                @media (max-width: $breakpoint-mobile) {
+                    max-width: 250px;
+                    margin-bottom: 2rem;
+                    margin-right: 0rem;
+                    height: 375px;
+                }
             }
         }
 
@@ -121,7 +155,7 @@ $rating-transition: .35s;
                     }
                 
                     .user-rating-count {
-                        background-color: $color-brand-darker;
+                        background-color: $color-blue-darker;
                         font-family: helvetica;
                         padding: .7rem;
                         width: 130px;
@@ -194,32 +228,22 @@ $rating-transition: .35s;
                     color: rgb(231, 231, 231);
                 }
 
-                .watch-later__logged-in {
-                    background-color: $color-primary-light;
-                    border-radius: 8px;
-                    padding: 1rem;
-                    position: absolute;
-                    bottom: 23px;
-                    left: 30px;
-                    width: max-content;
-                    color: $color-blue-light;
-
-                    @media (max-width: $breakpoint-mobile){
-                        font-size: 0.85rem;
-                        padding: .75rem;
-                        left: 0px;
-                        bottom: 27px;
-                    }
-                }
+                
                 
             }
 
             .list {
-                color: rgb(202, 202, 202);
+                color: rgb(206, 206, 206);
                 font-size: 0.9rem;
                 position: relative;
                 bottom: 2px;
                 display: flex;
+                cursor: pointer;
+                height: 26px;
+
+                &:hover {
+                    color: rgb(172, 172, 172);
+                }
 
                 .list__img {
                     width: 25px;
@@ -265,6 +289,24 @@ $rating-transition: .35s;
                 margin-bottom: 0.25rem;
             }
         }
+    }
+}
+
+.watch-later__logged-in {
+    background-color: $color-primary-light;
+    border-radius: 8px;
+    padding: 1rem;
+    position: absolute;
+    bottom: 23px;
+    left: 30px;
+    width: max-content;
+    color: $color-blue-light;
+
+    @media (max-width: $breakpoint-mobile){
+        font-size: 0.85rem;
+        padding: .75rem;
+        left: 0px;
+        bottom: 27px;
     }
 }
 

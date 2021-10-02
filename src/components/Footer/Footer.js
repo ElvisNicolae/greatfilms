@@ -28,10 +28,10 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="footer-content__people">
-                    <Link to="/"><h1>People</h1></Link>
+                    <Link to="/people"><h1>People</h1></Link>
                     <hr />
                     <ul>
-                        <Link to="/"><li>Popular People</li></Link>
+                        <Link to="/people"><li>Popular People</li></Link>
                     </ul>
                 </div>
                 <div className="footer-content__contact">

@@ -1,0 +1,23 @@
+@import "../../sass/global.scss";
+
+
+.modal-list-content-trailer {
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    height: 576px;
+    width: 858px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    text-align: center;
+
+    @media (max-width: 780px) {
+        width: 700px;
+    }
+
+    @media (max-width: 780px) {
+        height: 300px;
+        width: 410px;
+    }
+}

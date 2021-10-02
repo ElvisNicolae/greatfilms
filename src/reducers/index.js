@@ -10,6 +10,12 @@ import searchMovieReducer from "./searchMovieReducer";
 import setSearchTermReducer from "./setSearchTermReducer";
 import getAccountReducer from "./getAccountReducer";
 import getAccountStatesReducer from "./getAccountStatesReducer";
+import getWatchlistReducer from './getWatchlistReducer';
+import getPopularPeopleReducer from "./getPopularPeopleReducer";
+import getPersonDetailsReducer from './getPersonDetailsReducer';
+import getPersonCreditsReducer from './getPersonCreditsReducer';
+import getCreatedListsReducer from "./getCreatedListsReducer";
+import getListDetailsReducer from './getListDetailsReducer';
 
 export default combineReducers({
     topRatedMovies,
@@ -22,5 +28,11 @@ export default combineReducers({
     searchData: searchMovieReducer,
     searchTerm: setSearchTermReducer,
     accountDetails: getAccountReducer,
-    accountStates: getAccountStatesReducer
+    accountStates: getAccountStatesReducer,
+    createdLists: getCreatedListsReducer,
+    watchlist: getWatchlistReducer,
+    popularPeople: getPopularPeopleReducer,
+    personDetails: getPersonDetailsReducer,
+    personCredits: getPersonCreditsReducer,
+    listDetails: getListDetailsReducer
 });

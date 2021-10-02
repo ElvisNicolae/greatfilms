@@ -36,7 +36,16 @@ $hover-color: $color-brand-dark;
             z-index: 999;
 
             li {
-                padding: .7rem 3.5rem .7rem .25rem; 
+                padding: .7rem .35rem .7rem .25rem;
+                width: 170px; 
+                height: 41px;
+                text-overflow: ellipsis;
+                overflow: hidden; 
+                white-space: nowrap;
+            }
+
+            .watchlist {
+                color: rgb(235, 235, 235);
             }
         }
 
@@ -44,6 +53,32 @@ $hover-color: $color-brand-dark;
         &:hover {
             .nav-hover__elements {
                 display: flex;
+            }
+        }
+    }
+
+    .nav-hover__elements--lists {
+        @media (max-width: 470px) {
+            width: 180px;
+            overflow: hidden;
+            font-size: 0.91rem;
+            padding: .7rem .35rem .7rem .6rem !important;
+            left: -20px !important;
+
+            li {
+                width: 170px !important;
+            }
+        }
+
+        @media (max-width: 380px) {
+            width: 160px;
+            overflow: hidden;
+            font-size: 0.91rem;
+            padding: .7rem .35rem .7rem .6rem !important;
+            left: -20px !important;
+
+            li {
+                width: 155px !important;
             }
         }
     }

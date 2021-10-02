@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useParams } from 'react-router-dom';
 import './MovieCast.scss';
 import { getCast } from '../../../actions/getCast';
+import { Link } from "react-router-dom";
 
 const MovieCast = ({getCast, movieCast}) => {
     const {id} = useParams();
@@ -33,17 +34,22 @@ const MovieCast = ({getCast, movieCast}) => {
             }
 
             return (
-                <div key={actor.id} className="cast-profile">
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} 
-                        alt={`${actor.name}'s profile`} 
-                        className="cast-profile__image" 
-                    />
-                    <div className="cast-profile__names">
-                        <h2 className="cast-profile__actor-name">{actor.name}</h2>
-                        <p className="cast-profile__actor-role">{actor.character}</p>
+                <Link 
+                    to={`/people/${actor.id}`}
+                    key={actor.id}
+                >
+                    <div key={actor.id} className="cast-profile">  
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} 
+                            alt={`${actor.name}'s profile`} 
+                            className="cast-profile__image" 
+                        />
+                        <div className="cast-profile__names">
+                            <h2 className="cast-profile__actor-name">{actor.name}</h2>
+                            <p className="cast-profile__actor-role">{actor.character}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             );
         })
 

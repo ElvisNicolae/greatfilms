@@ -9,9 +9,16 @@ import listIcon from '../../../images/listIcon.png';
 import RateModal from '../../Modals/RateModal';
 import RateStarFill from '../../../images/RateStarFill.png';
 import getAccountStates from '../../../actions/getAccountStates';
+import ListModal from '../../Modals/ListModal';
+import TrailerModal from '../../Modals/TrailerModal';
+import { Link } from 'react-router-dom';
 
-const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
+const MovieDetails = ({getMovie, movie, getAccountStates, accountStates, accountDetails}) => {
     const [rateModalVisible, setRateModalVisible] = useState(false);
+    const [listModalVisible, setListModalVisible] = useState(false);
+    const [trailerModalVisible, setTrailerModalVisible] = useState(false);
+
+    const [mustLoginVisible, setMustLoginVisible ] = useState(false);
     const {id} = useParams();
 
     useEffect(()=>{
@@ -24,6 +31,17 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
 
     const onRateClick = () => {
         setRateModalVisible(!rateModalVisible);
+        document.querySelector("body").style.overflowY = rateModalVisible ? "visible" : "hidden";
+    }
+    
+    const onListClick = () => {
+        setListModalVisible(!listModalVisible);
+        document.querySelector("body").style.overflowY = listModalVisible ? "visible" : "hidden";
+    }
+
+    const onPosterClick = () => {
+        setTrailerModalVisible(!trailerModalVisible);
+        document.querySelector("body").style.overflowY = trailerModalVisible ? "visible" : "hidden";
     }
 
     // if data is loading
@@ -31,6 +49,14 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
         return <div className="movie-loading">Loading...</div>
     }
     else {
+        const handleBtnClickedLoggedOut = () => {
+            setMustLoginVisible(true);
+    
+            setTimeout(()=>{
+                setMustLoginVisible(false);
+            }, 2100) // after 2.1s message disappears
+        }
+
         const movieGenres = movie.genres.map((genre, index) =>{
             if(index === movie.genres.length-1){
                 return <span key={genre.id}>{genre.name}</span>
@@ -52,7 +78,14 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
             <div>
                 <div className="movie-container">
                     <div className="movie-container__content">
-                        <img className="movie-poster" src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
+                        <div className="movie-poster-container" onClick={onPosterClick}>
+                            <img 
+                                className="movie-poster" 
+                                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} 
+                                alt={`${movie.title}'s poster`}
+                            />
+                            <h3 className="movie-poster-container__trailer-text">Watch Trailer</h3>
+                        </div>
                         
                         <div className="movie-details">
                             <h1 className="movie-title">
@@ -84,13 +117,18 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
                                 <WatchLaterButton movieId={movie.id}/>
                                 
 
-                                <div className="list">
+                                <div className="list" onClick={accountDetails.username ? onListClick : handleBtnClickedLoggedOut}>
                                     <img 
                                         src={listIcon} 
                                         alt="list icon" 
                                         className="list__img" 
                                     />  
                                     <h2 className="list__text">LIST</h2>
+                                    {accountDetails.username ? null : <Link 
+                                        to="/login"
+                                        className={"watch-later__logged-in"}
+                                        style={{display: mustLoginVisible ? "inline-block" : "none"}}
+                                    > You must be logged in.</Link> }
                                 </div>
                             </div>
 
@@ -117,15 +155,18 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates}) => {
                     </div>
                 </div>
                 {rateModalVisible ? <RateModal movieTitle={movie.title} movieId={movie.id} onModalClick={onRateClick}/> : null}
+                {listModalVisible ? <ListModal movie={movie} onModalClick={onListClick}/> : null}
+                {trailerModalVisible ? <TrailerModal onModalClick={onPosterClick} movie={movie}/> : null}
             </div>
         );
     }
 }
 
-const mapStateToProps = ({movie, accountStates}) => {
+const mapStateToProps = ({movie, accountStates, accountDetails}) => {
     return {
         movie,
-        accountStates
+        accountStates,
+        accountDetails
     }
 }
 
