@@ -194,23 +194,7 @@ $rating-transition: .35s;
                     color: rgb(231, 231, 231);
                 }
 
-                .watch-later__logged-in {
-                    background-color: $color-primary-light;
-                    border-radius: 8px;
-                    padding: 1rem;
-                    position: absolute;
-                    bottom: 23px;
-                    left: 30px;
-                    width: max-content;
-                    color: $color-blue-light;
-
-                    @media (max-width: $breakpoint-mobile){
-                        font-size: 0.85rem;
-                        padding: .75rem;
-                        left: 0px;
-                        bottom: 27px;
-                    }
-                }
+                
                 
             }
 
@@ -271,6 +255,24 @@ $rating-transition: .35s;
                 margin-bottom: 0.25rem;
             }
         }
+    }
+}
+
+.watch-later__logged-in {
+    background-color: $color-primary-light;
+    border-radius: 8px;
+    padding: 1rem;
+    position: absolute;
+    bottom: 23px;
+    left: 30px;
+    width: max-content;
+    color: $color-blue-light;
+
+    @media (max-width: $breakpoint-mobile){
+        font-size: 0.85rem;
+        padding: .75rem;
+        left: 0px;
+        bottom: 27px;
     }
 }
 

@@ -18,6 +18,7 @@ const DeleteListModal = ({onExitClick, list, getCreatedLists}) => {
         })
 
         setTimeout(()=>{
+            onExitClick();
             getCreatedLists();
             history.push('/')
         }, 550);
