@@ -12,6 +12,7 @@ import Login from './Authentication/Login/Login';
 import WatchlistPage from './WatchlistPage/WatchlistPage';
 import PopularPeoplePage from './PopularPeoplePage/PopularPeoplePage';
 import PersonPage from './PersonPage/PersonPage';
+import ListPage from './ListPage/ListPage';
 import "./App.scss";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/movies/watchlist" component={WatchlistPage}/>
         <Route path="/people/:id" component={PersonPage}/>
+        <Route path="/list/:id" component={ListPage}/>
         <Route path="/people" exact component={PopularPeoplePage}/>
         <Footer />
       </BrowserRouter>

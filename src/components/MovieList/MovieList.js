@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './MovieList.scss';
 import { useInView } from 'react-intersection-observer';
 
-const MovieList = ({title, movies, fetchNewPage}) => {
+const MovieList = ({title, movies, fetchNewPage, isCustomList, deleteList}) => {
     const [page, setPage] = useState(2);
     const {ref, inView} = useInView();
 
@@ -14,6 +14,10 @@ const MovieList = ({title, movies, fetchNewPage}) => {
             setPage(page+1);
         }
     }, [inView]);
+
+    const renderDeleteButton = () => {
+        return <button className="list-tittle__delete-btn" onClick={deleteList}>Delete List</button>
+    }
 
     const renderList = movies.map((movie, index) => {
         if(index === movies.length-1){
@@ -64,6 +68,7 @@ const MovieList = ({title, movies, fetchNewPage}) => {
                 <h1 className="list-title">
                     {title}
                     <hr className="list-title__hr" />
+                    {isCustomList ? renderDeleteButton() : null}
                 </h1>
                 
                 <div className="movies">

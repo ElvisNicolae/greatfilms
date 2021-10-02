@@ -88,6 +88,11 @@
                 margin: .75rem 0rem;
                 display: flex;
                 text-align: left;
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(211, 211, 211);
+                }
 
                 .modal-list-content-check {
                     width: 25px;

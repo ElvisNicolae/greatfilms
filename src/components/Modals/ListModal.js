@@ -33,6 +33,9 @@ const ListModal = ({onModalClick, getCreatedLists, accountDetails, createdLists,
             if(data.item_present) {
                 document.getElementsByClassName(list.id)[0].src = Checked;
             }
+            else{
+                document.getElementsByClassName(list.id)[0].src = NotChecked;
+            }   
         })
     },[listRef.current, checkList])
 
@@ -57,14 +60,32 @@ const ListModal = ({onModalClick, getCreatedLists, accountDetails, createdLists,
     }
 
     const onListClick = async list => {
-        const {data} = await themoviedb.post(`/list/${list.id}/add_item`, {
-            media_id: movie.id
-        }, 
-        {
+        const response = await themoviedb.get(`/list/${list.id}/item_status`, {
             params: {
-                session_id: sessionId
+                movie_id: movie.id
             }
-        })
+        });
+        
+        if(response.data.item_present) {
+            const {data} = await themoviedb.post(`/list/${list.id}/remove_item`, {
+                media_id: movie.id
+            }, 
+            {
+                params: {
+                    session_id: sessionId
+                }
+            })
+        } 
+        else {
+            const {data} = await themoviedb.post(`/list/${list.id}/add_item`, {
+                media_id: movie.id
+            }, 
+            {
+                params: {
+                    session_id: sessionId
+                }
+            })
+        }
 
         setCheckList(!checkList);
     }

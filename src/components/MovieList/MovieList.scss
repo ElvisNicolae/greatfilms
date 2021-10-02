@@ -23,6 +23,23 @@ hr {
 
     .list-title {
         margin: 2.5rem 0rem 4rem;
+
+        .list-tittle__delete-btn {
+            background-color: $color-red-dark;
+            border: none;
+            border-radius: 2px;
+            padding: .75rem 1.25rem;
+            color: rgb(206, 206, 206);
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: .75rem 0rem 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-red;
+                color: rgb(226, 226, 226);
+            }
+        }
     }
 
     .list-title__hr {
