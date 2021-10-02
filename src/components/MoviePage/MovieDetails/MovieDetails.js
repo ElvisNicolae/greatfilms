@@ -10,11 +10,14 @@ import RateModal from '../../Modals/RateModal';
 import RateStarFill from '../../../images/RateStarFill.png';
 import getAccountStates from '../../../actions/getAccountStates';
 import ListModal from '../../Modals/ListModal';
+import TrailerModal from '../../Modals/TrailerModal';
 import { Link } from 'react-router-dom';
 
 const MovieDetails = ({getMovie, movie, getAccountStates, accountStates, accountDetails}) => {
     const [rateModalVisible, setRateModalVisible] = useState(false);
     const [listModalVisible, setListModalVisible] = useState(false);
+    const [trailerModalVisible, setTrailerModalVisible] = useState(false);
+
     const [mustLoginVisible, setMustLoginVisible ] = useState(false);
     const {id} = useParams();
 
@@ -30,10 +33,15 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates, account
         setRateModalVisible(!rateModalVisible);
         document.querySelector("body").style.overflowY = rateModalVisible ? "visible" : "hidden";
     }
-
+    
     const onListClick = () => {
         setListModalVisible(!listModalVisible);
         document.querySelector("body").style.overflowY = listModalVisible ? "visible" : "hidden";
+    }
+
+    const onPosterClick = () => {
+        setTrailerModalVisible(!trailerModalVisible);
+        document.querySelector("body").style.overflowY = trailerModalVisible ? "visible" : "hidden";
     }
 
     // if data is loading
@@ -70,7 +78,14 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates, account
             <div>
                 <div className="movie-container">
                     <div className="movie-container__content">
-                        <img className="movie-poster" src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={`${movie.title}'s poster`} />
+                        <div className="movie-poster-container" onClick={onPosterClick}>
+                            <img 
+                                className="movie-poster" 
+                                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} 
+                                alt={`${movie.title}'s poster`}
+                            />
+                            <h3 className="movie-poster-container__trailer-text">Watch Trailer</h3>
+                        </div>
                         
                         <div className="movie-details">
                             <h1 className="movie-title">
@@ -141,6 +156,7 @@ const MovieDetails = ({getMovie, movie, getAccountStates, accountStates, account
                 </div>
                 {rateModalVisible ? <RateModal movieTitle={movie.title} movieId={movie.id} onModalClick={onRateClick}/> : null}
                 {listModalVisible ? <ListModal movie={movie} onModalClick={onListClick}/> : null}
+                {trailerModalVisible ? <TrailerModal onModalClick={onPosterClick} movie={movie}/> : null}
             </div>
         );
     }
