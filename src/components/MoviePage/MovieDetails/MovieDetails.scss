@@ -49,6 +49,7 @@ $rating-transition: .35s;
                 text-shadow: 2px 1.5px #000000;
                 opacity: 0;
                 cursor: pointer;
+                transition: all 0.35s;
 
                 @media (max-width: $breakpoint-mobile){
                     font-size: 1.2rem;
@@ -62,6 +63,8 @@ $rating-transition: .35s;
                 border-radius: 4px;
                 height: 450px;
                 cursor: pointer;
+                transition: all 0.35s;
+
     
                 @media (max-width: $breakpoint-tablet) {
                     max-width: 290px;

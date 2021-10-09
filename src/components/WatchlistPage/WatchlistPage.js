@@ -6,7 +6,7 @@ import { getWatchlist } from '../../actions/getWatchlist';
 import { resetAction } from '../../actions/resetAction';
 import MovieList from "../MovieList/MovieList";
 
-const WatchlistPage = ({getWatchlist, watchlist, resetAction}) => {
+const WatchlistPage = ({getWatchlist, watchlist, resetAction, accountDetails}) => {
     const location = useLocation();
 
     useEffect(()=>{
@@ -27,18 +27,21 @@ const WatchlistPage = ({getWatchlist, watchlist, resetAction}) => {
 
     return (
         <div>
-            <MovieList
+            {!accountDetails.username 
+                ? <h1>You must be signed into your account to view your watchlist</h1> 
+                : <MovieList
                 title={"Your watchlist:"}   
                 movies={watchlist} 
                 fetchNewPage={fetchNewPage}
-            />
+            />}
         </div>
     );
 }
 
-const mapStateToProps = ({watchlist}) => {
+const mapStateToProps = ({watchlist, accountDetails}) => {
     return {
-        watchlist
+        watchlist,
+        accountDetails
     }
 }
 

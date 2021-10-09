@@ -35,8 +35,8 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
                 if(currentPosition >= 0){
                     for (let i=0;i<movie.length;i++){
 
-                        // divided by 20 so as not to move so many pixels
-                        movie[i].style.right = `${currentPosition + (touchstartPosition-e.touches[0].clientX)/20}px`; 
+                        // divided by 1.4 so as not to move so many pixels
+                        movie[i].style.right = `${currentPosition + (touchstartPosition-e.touches[0].clientX)/1.4}px`; 
                     }
 
                     currentPosition = currentPosition + (touchstartPosition-e.touches[0].clientX)/20;
