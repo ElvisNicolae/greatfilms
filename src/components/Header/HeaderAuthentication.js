@@ -18,7 +18,7 @@ const HeaderAuthentication = ({getAccount, accountDetails}) => {
     const handleSignUpClick = async () => {
         const {data} = await themoviedb.get("/authentication/token/new"); 
     
-        window.location.href = `https://www.themoviedb.org/authenticate/${data.request_token}?redirect_to=http://localhost:3000/approved`;
+        window.location.href = `https://www.themoviedb.org/authenticate/${data.request_token}?redirect_to=https://elvisnicolae.github.io/greatfilms/approved`;
     }
 
     const handleLogOutClick = () => {
