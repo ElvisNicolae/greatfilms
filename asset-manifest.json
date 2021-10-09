@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/greatfilms/static/css/main.147ce322.chunk.css",
+    "main.js": "/greatfilms/static/js/main.f0be171b.chunk.js",
+    "main.js.map": "/greatfilms/static/js/main.f0be171b.chunk.js.map",
+    "runtime-main.js": "/greatfilms/static/js/runtime-main.93d8a333.js",
+    "runtime-main.js.map": "/greatfilms/static/js/runtime-main.93d8a333.js.map",
+    "static/js/2.d749e571.chunk.js": "/greatfilms/static/js/2.d749e571.chunk.js",
+    "static/js/2.d749e571.chunk.js.map": "/greatfilms/static/js/2.d749e571.chunk.js.map",
+    "index.html": "/greatfilms/index.html",
+    "static/css/main.147ce322.chunk.css.map": "/greatfilms/static/css/main.147ce322.chunk.css.map",
+    "static/js/2.d749e571.chunk.js.LICENSE.txt": "/greatfilms/static/js/2.d749e571.chunk.js.LICENSE.txt",
+    "static/media/AvatarIcon.d184fa9c.png": "/greatfilms/static/media/AvatarIcon.d184fa9c.png",
+    "static/media/Checked.ca9ed796.png": "/greatfilms/static/media/Checked.ca9ed796.png",
+    "static/media/RateStarFill.66cbace2.png": "/greatfilms/static/media/RateStarFill.66cbace2.png",
+    "static/media/RateStarNoFill.2311fdd3.png": "/greatfilms/static/media/RateStarNoFill.2311fdd3.png",
+    "static/media/StackedMovies.07385105.png": "/greatfilms/static/media/StackedMovies.07385105.png",
+    "static/media/okIcon.b2412597.png": "/greatfilms/static/media/okIcon.b2412597.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93d8a333.js",
+    "static/js/2.d749e571.chunk.js",
+    "static/css/main.147ce322.chunk.css",
+    "static/js/main.f0be171b.chunk.js"
+  ]
+}
