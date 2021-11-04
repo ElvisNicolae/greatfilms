@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/greatfilms/static/css/main.c5ccdb71.chunk.css",
-    "main.js": "/greatfilms/static/js/main.887aebe5.chunk.js",
-    "main.js.map": "/greatfilms/static/js/main.887aebe5.chunk.js.map",
+    "main.js": "/greatfilms/static/js/main.6ab79190.chunk.js",
+    "main.js.map": "/greatfilms/static/js/main.6ab79190.chunk.js.map",
     "runtime-main.js": "/greatfilms/static/js/runtime-main.93d8a333.js",
     "runtime-main.js.map": "/greatfilms/static/js/runtime-main.93d8a333.js.map",
-    "static/js/2.d749e571.chunk.js": "/greatfilms/static/js/2.d749e571.chunk.js",
-    "static/js/2.d749e571.chunk.js.map": "/greatfilms/static/js/2.d749e571.chunk.js.map",
+    "static/js/2.1fe67311.chunk.js": "/greatfilms/static/js/2.1fe67311.chunk.js",
+    "static/js/2.1fe67311.chunk.js.map": "/greatfilms/static/js/2.1fe67311.chunk.js.map",
     "index.html": "/greatfilms/index.html",
     "static/css/main.c5ccdb71.chunk.css.map": "/greatfilms/static/css/main.c5ccdb71.chunk.css.map",
-    "static/js/2.d749e571.chunk.js.LICENSE.txt": "/greatfilms/static/js/2.d749e571.chunk.js.LICENSE.txt",
+    "static/js/2.1fe67311.chunk.js.LICENSE.txt": "/greatfilms/static/js/2.1fe67311.chunk.js.LICENSE.txt",
     "static/media/AvatarIcon.d184fa9c.png": "/greatfilms/static/media/AvatarIcon.d184fa9c.png",
     "static/media/Checked.ca9ed796.png": "/greatfilms/static/media/Checked.ca9ed796.png",
     "static/media/RateStarFill.66cbace2.png": "/greatfilms/static/media/RateStarFill.66cbace2.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.93d8a333.js",
-    "static/js/2.d749e571.chunk.js",
+    "static/js/2.1fe67311.chunk.js",
     "static/css/main.c5ccdb71.chunk.css",
-    "static/js/main.887aebe5.chunk.js"
+    "static/js/main.6ab79190.chunk.js"
   ]
 }
