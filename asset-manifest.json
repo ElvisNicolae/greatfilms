@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/greatfilms/static/css/main.c5ccdb71.chunk.css",
-    "main.js": "/greatfilms/static/js/main.6ab79190.chunk.js",
-    "main.js.map": "/greatfilms/static/js/main.6ab79190.chunk.js.map",
+    "main.js": "/greatfilms/static/js/main.76197203.chunk.js",
+    "main.js.map": "/greatfilms/static/js/main.76197203.chunk.js.map",
     "runtime-main.js": "/greatfilms/static/js/runtime-main.93d8a333.js",
     "runtime-main.js.map": "/greatfilms/static/js/runtime-main.93d8a333.js.map",
     "static/js/2.1fe67311.chunk.js": "/greatfilms/static/js/2.1fe67311.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.93d8a333.js",
     "static/js/2.1fe67311.chunk.js",
     "static/css/main.c5ccdb71.chunk.css",
-    "static/js/main.6ab79190.chunk.js"
+    "static/js/main.76197203.chunk.js"
   ]
 }
