@@ -18,11 +18,12 @@ const HeaderAuthentication = ({getAccount, accountDetails}) => {
     const handleSignUpClick = async () => {
         const {data} = await themoviedb.get("/authentication/token/new"); 
     
-        window.location.href = `https://www.themoviedb.org/authenticate/${data.request_token}?redirect_to=https://elvisnicolae.github.io/greatfilms/approved`;
+        window.location.href = `https://www.themoviedb.org/authenticate/${data.request_token}?redirect_to=https://elvisnicolae.github.io/greatfilms/#/approved`;
     }
 
     const handleLogOutClick = () => {
         document.cookie = "sessionId=; expires=Thu, 01 Jan 1971 00:00:00 UTC; path=/";
+        document.cookie = "sessionId=; expires=Thu, 01 Jan 1971 00:00:00 UTC; path=/greatfilms";
         window.location.reload();
     }
 

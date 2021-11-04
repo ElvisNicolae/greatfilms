@@ -9,7 +9,7 @@ const TrailerModal = ({onModalClick, movie}) => {
     
     useEffect(()=>{
         const asyncFunction = async ()=>{
-            const {data} = await axios.get(`https://imdb-api.com/en/API/Trailer/k_8a212luk/${movie.imdb_id}`);
+            const {data} = await axios.get(`https://imdb-api.com/en/API/Trailer/pk_ba141hfuuqg53ge0b/${movie.imdb_id}`);
             setLinkEmbed(data.linkEmbed);
         }
 

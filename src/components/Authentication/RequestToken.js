@@ -19,8 +19,7 @@ const RequestToken = () => {
                 request_token: params.request_token
             })
             document.cookie = `sessionId=${data.session_id}; expires=Thu, 30 Dec 2021 12:00:00 UTC;`;           
-            history.push('/');
-            window.location.reload();
+            window.location.href = `https://elvisnicolae.github.io/greatfilms/#/`;
         }
         
         createSession();
