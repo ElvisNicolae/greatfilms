@@ -12,17 +12,29 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
     const [page, setPage] = useState(2);
     const {ref, inView} = useInView();
     const movingDistance = 78; // vw
+
+    useEffect(()=>{
+        // when new items are fetched, move them
+        // to the right place
+        if(movies.length > 20){
+            let movie = document.querySelectorAll(`.${stringId}`);
+
+            for (let i = movie.length-20; i < movie.length; i++){
+                movie[i].style.right = `${parseInt(movie[0].style.right)}px`; 
+            }
+        }
+    },[movies]);
     
     // useEffect for mobile and tablet
     useEffect(()=>{
         const slider = document.querySelector(`.${stringId}`);
         let moving = false;
-        let touchstartPosition;
+        let lastPosition = 0;
         let currentPosition = 0;
 
         const touchStart = e =>{   
             moving = true; 
-            touchstartPosition = e.touches[0].clientX; 
+            lastPosition = e.touches[0].clientX;
 
             if(currentPosition<0){
                 currentPosition=0;
@@ -34,13 +46,13 @@ const Slider = ({sliderTitle, movies, link, fetchNewPage, stringId}) => {
                 let movie = document.querySelectorAll(`.${stringId}`);
                 if(currentPosition >= 0){
                     for (let i=0;i<movie.length;i++){
-
-                        // divided by 2.3 so as not to move so many pixels
-                        movie[i].style.right = `${currentPosition + (touchstartPosition-e.touches[0].clientX)/2.3}px`; 
+                        movie[i].style.right = `${currentPosition + lastPosition-e.touches[0].clientX}px`; 
                     }
 
-                    currentPosition = currentPosition + (touchstartPosition-e.touches[0].clientX)/2.3;
+                    currentPosition = currentPosition + lastPosition-e.touches[0].clientX;
                 }
+
+                lastPosition = e.touches[0].clientX;
             }
         }     
 
