@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import MoviePage from "./MoviePage/MoviePage";
 import TopRatedPage from "./TopRatedPage/TopRatedPage";
@@ -18,7 +18,7 @@ import "./App.scss";
 function App() {
   return (
     <div id="app">
-      <BrowserRouter basename="/greatfilms">
+      <HashRouter>
         <Header />
         <Route path="/" exact component={HomePage} />
         <Route path="/movie/:id" component={MoviePage} />
@@ -33,7 +33,7 @@ function App() {
         <Route path="/list/:id" component={ListPage} />
         <Route path="/people" exact component={PopularPeoplePage} />
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
