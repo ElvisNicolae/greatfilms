@@ -27,6 +27,7 @@ $rating-transition: .35s;
         .movie-poster-container {
             position: relative;
             height: fit-content;
+            margin-right: 2.5rem;
 
             &:hover {
                 .movie-poster-container__trailer-text {
@@ -43,7 +44,7 @@ $rating-transition: .35s;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate( -65%, -50% );
+                transform: translate( -30%, -50% );
                 font-size: 1.6rem;
                 letter-spacing: 1px;
                 text-shadow: 2px 1.5px #000000;
@@ -58,7 +59,6 @@ $rating-transition: .35s;
             }
 
             .movie-poster {
-                margin-right: 2.5rem;
                 max-width: 300px;
                 border-radius: 4px;
                 height: 450px;
