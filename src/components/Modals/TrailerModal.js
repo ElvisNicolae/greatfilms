@@ -19,7 +19,7 @@ const TrailerModal = ({onModalClick, movie}) => {
     return ReactDOM.createPortal(
         <div className="modal-list">
             <div className="modal-list-content-trailer">
-                {linkEmbed ? <iframe id="frame" src={linkEmbed} frameBorder="1" width="100%" height="100%" allowFullScreen></iframe> 
+                {linkEmbed ? <iframe id="frame" src={linkEmbed} frameBorder="0" width="100%" height="100%" allowFullScreen></iframe> 
                     : <h1 onClick={onModalClick}> Trailer unavailable, click here to exit. </h1>}
             </div>
             <div className="modal-list-exit" onClick={onModalClick}></div>
