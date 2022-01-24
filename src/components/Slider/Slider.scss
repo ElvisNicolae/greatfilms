@@ -75,6 +75,7 @@ $color-slider: rgb(202, 202, 202);
 
             @media (max-width: $breakpoint-mobile) {
                 width: 110px;
+                transition: none;
             }
 
             .movie__poster {
