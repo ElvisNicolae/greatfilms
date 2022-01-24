@@ -43,3 +43,5 @@ Logged in users can do all of the following things:
 
 
 To improve the performance of the website, lazy loading technique was used; and to make the project more scalable, the components were built to be as reusable as possible.
+
+The BEM methodology was used as a naming convention for classes.
