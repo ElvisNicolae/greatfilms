@@ -27,7 +27,7 @@ const Login = () => {
                 request_token: loginresponse.data.request_token
             })
 
-            document.cookie = `sessionId=${sessionresponse.data.session_id}; expires=Thu, 30 Dec 2021 12:00:00 UTC; path=/`;           
+            document.cookie = `sessionId=${sessionresponse.data.session_id}; expires=Thu, 30 Dec 2031 12:00:00 UTC; path=/`;           
             setTimeout(()=>{
                 history.push('/');
                 window.location.reload();
