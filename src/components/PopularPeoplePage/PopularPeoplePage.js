@@ -11,7 +11,7 @@ const PopularPeoplePage = ({getPopularPeople, popularPeople, resetAction}) => {
     const location = useLocation();
     const {ref, inView} = useInView();
     const [page, setPage] = useState(2);
-    
+
     useEffect(()=>{
         getPopularPeople();
 
@@ -32,11 +32,11 @@ const PopularPeoplePage = ({getPopularPeople, popularPeople, resetAction}) => {
     const renderPeopleCards = popularPeople.map((person, index) => {
         if(index === popularPeople.length-1){
             return (<React.Fragment key={person.id}>
-                <Link 
+                <Link
                     ref={ref}
                     className="popular-people-card"
                     to={`/people/${person.id}`}
-                >              
+                >
                     <img className="popular-people-card__profile-img" src={`https://image.tmdb.org/t/p/w200/${person.profile_path}`} alt={`${person.name}'s profile`} />
                     <div className="popular-people-card__text">
                         <h4 className="popular-people-card__name">{person.name}</h4>
@@ -48,10 +48,10 @@ const PopularPeoplePage = ({getPopularPeople, popularPeople, resetAction}) => {
 
         return (
             <React.Fragment key={person.id}>
-                <Link 
+                <Link
                     className="popular-people-card"
                     to={`/people/${person.id}`}
-                >              
+                >
                     <img className="popular-people-card__profile-img" src={`https://image.tmdb.org/t/p/w200/${person.profile_path}`} alt={`${person.name}'s profile`} />
                     <div className="popular-people-card__text">
                         <h4 className="popular-people-card__name">{person.name}</h4>
