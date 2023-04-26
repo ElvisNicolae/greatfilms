@@ -27,7 +27,7 @@
         @media (max-width: $breakpoint-mobile) {
             grid-template-columns: auto auto;
         }
-    
+
         .popular-people-card {
             width: 184px;
 
@@ -49,6 +49,30 @@
 
             .popular-people-card__profile-img {
                 width: inherit;
+            }
+
+            .popular-people-card__profile-img--no-img {
+                height: 277px;
+                background-color: #05080c;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media (max-width: 1060px) {
+                    height: 245px;
+                }
+
+                @media (max-width: 600px) {
+                    height: 202px;
+                }
+
+                @media (max-width: $breakpoint-mobile) {
+                    height: 225px;
+                }
+
+                @media (max-width: 350px) {
+                    height: 195px;
+                }
             }
 
             .popular-people-card__text {
