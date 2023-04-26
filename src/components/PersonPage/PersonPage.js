@@ -9,7 +9,7 @@ import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const PersonPage = ({getPersonDetails, person, getPersonCredits, resetAction, credits}) => {
-    const {id} = useParams();   
+    const {id} = useParams();
     const location = useLocation();
 
     useEffect(()=>{
@@ -49,7 +49,7 @@ const PersonPage = ({getPersonDetails, person, getPersonCredits, resetAction, cr
                     {elm}.
                 </React.Fragment>
             }
-            
+
             if(index === textSplit.length-1){
                 return <React.Fragment key={index}>{elm}</React.Fragment>
             }
@@ -77,10 +77,10 @@ const PersonPage = ({getPersonDetails, person, getPersonCredits, resetAction, cr
     return (
         <div className="person-container">
             <div className="person-info">
-                <img 
-                    src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`} 
-                    alt={`${person.name}'s profile'`} 
-                    className="person-info__profile-img" 
+                <img
+                    src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}
+                    alt={`${person.name}'s profile'`}
+                    className="person-info__profile-img"
                 />
                 <div className="person-info__text">
                     <div className="person-info__titles">
