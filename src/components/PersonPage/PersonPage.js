@@ -62,7 +62,14 @@ const PersonPage = ({getPersonDetails, person, getPersonCredits, resetAction, cr
 
     const renderPersonCredits = credits.map(credit => {
         return (
-            <Link to={credit.poster_path === null ? "/" : `/movie/${credit.id}`} key={credit.id} className="credit">
+            <Link
+                to={credit.poster_path === null ? null : `/movie/${credit.id}`}
+                key={credit.id}
+                className="credit"
+                style={{
+                    cursor: credit.poster_path === null ? "not-allowed" : "pointer"
+                }}
+            >
                 {credit.poster_path === null ? <div className="credit__poster credit__poster-fake">
                     <h4> No Image </h4>
                 </div> : <img className="credit__poster" src={`https://image.tmdb.org/t/p/w200/${credit.poster_path}`} alt={`${credit.title}'s poster`} /> }
@@ -77,11 +84,21 @@ const PersonPage = ({getPersonDetails, person, getPersonCredits, resetAction, cr
     return (
         <div className="person-container">
             <div className="person-info">
-                <img
-                    src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}
-                    alt={`${person.name}'s profile'`}
-                    className="person-info__profile-img"
-                />
+                {
+                    person.profile_path == null ?
+                    <div
+                        className="person-info__profile-img"
+                    >
+                        <h4 className='person-info__profile-img--fake'> No Image </h4>
+                    </div> :
+                    (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}
+                            alt={`${person.name}'s profile'`}
+                            className="person-info__profile-img"
+                        />
+                    )
+                }
                 <div className="person-info__text">
                     <div className="person-info__titles">
                         <h1 className="person-info__name">{person.name}</h1>
