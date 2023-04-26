@@ -40,7 +40,7 @@ const PopularPeoplePage = ({getPopularPeople, popularPeople, resetAction}) => {
                     <img className="popular-people-card__profile-img" src={`https://image.tmdb.org/t/p/w200/${person.profile_path}`} alt={`${person.name}'s profile`} />
                     <div className="popular-people-card__text">
                         <h4 className="popular-people-card__name">{person.name}</h4>
-                        <p className="popular-people-card__popularity">Popularity: {person.popularity}</p>
+                        <p className="popular-people-card__popularity">Popularity: {person.popularity.toFixed()}</p>
                     </div>
                 </Link>
             </React.Fragment>);
@@ -52,10 +52,16 @@ const PopularPeoplePage = ({getPopularPeople, popularPeople, resetAction}) => {
                     className="popular-people-card"
                     to={`/people/${person.id}`}
                 >
-                    <img className="popular-people-card__profile-img" src={`https://image.tmdb.org/t/p/w200/${person.profile_path}`} alt={`${person.name}'s profile`} />
+                    {
+                        person.profile_path == null ?
+                            <div className='popular-people-card__profile-img popular-people-card__profile-img--no-img'>
+                                <h4> No Image </h4>
+                            </div> :
+                            (<img className="popular-people-card__profile-img" src={`https://image.tmdb.org/t/p/w200/${person.profile_path}`} alt={`${person.name}'s profile`} />)
+                    }
                     <div className="popular-people-card__text">
                         <h4 className="popular-people-card__name">{person.name}</h4>
-                        <p className="popular-people-card__popularity">Popularity: {person.popularity.toString().substring(0,5)}</p>
+                        <p className="popular-people-card__popularity">Popularity: {person.popularity.toFixed()}</p>
                     </div>
                 </Link>
             </React.Fragment>
