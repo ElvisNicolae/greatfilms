@@ -1,26 +1,19 @@
 {
   "files": {
-    "main.css": "/greatfilms/static/css/main.2abf3ca2.chunk.css",
-    "main.js": "/greatfilms/static/js/main.4c805345.chunk.js",
-    "main.js.map": "/greatfilms/static/js/main.4c805345.chunk.js.map",
-    "runtime-main.js": "/greatfilms/static/js/runtime-main.93d8a333.js",
-    "runtime-main.js.map": "/greatfilms/static/js/runtime-main.93d8a333.js.map",
-    "static/js/2.58de1c64.chunk.js": "/greatfilms/static/js/2.58de1c64.chunk.js",
-    "static/js/2.58de1c64.chunk.js.map": "/greatfilms/static/js/2.58de1c64.chunk.js.map",
+    "main.css": "/greatfilms/static/css/main.2bc505f3.css",
+    "main.js": "/greatfilms/static/js/main.845db010.js",
+    "static/media/StackedMovies.png": "/greatfilms/static/media/StackedMovies.07385105ac06365624e7.png",
+    "static/media/AvatarIcon.png": "/greatfilms/static/media/AvatarIcon.d184fa9cd597512d9929.png",
+    "static/media/okIcon.png": "/greatfilms/static/media/okIcon.b24125973ef3b73b3b10.png",
+    "static/media/RateStarNoFill.png": "/greatfilms/static/media/RateStarNoFill.2311fdd34df6d7af5184.png",
+    "static/media/RateStarFill.png": "/greatfilms/static/media/RateStarFill.66cbace2dbc59ce063c3.png",
+    "static/media/Checked.png": "/greatfilms/static/media/Checked.ca9ed796818cb8331afd.png",
     "index.html": "/greatfilms/index.html",
-    "static/css/main.2abf3ca2.chunk.css.map": "/greatfilms/static/css/main.2abf3ca2.chunk.css.map",
-    "static/js/2.58de1c64.chunk.js.LICENSE.txt": "/greatfilms/static/js/2.58de1c64.chunk.js.LICENSE.txt",
-    "static/media/AvatarIcon.d184fa9c.png": "/greatfilms/static/media/AvatarIcon.d184fa9c.png",
-    "static/media/Checked.ca9ed796.png": "/greatfilms/static/media/Checked.ca9ed796.png",
-    "static/media/RateStarFill.66cbace2.png": "/greatfilms/static/media/RateStarFill.66cbace2.png",
-    "static/media/RateStarNoFill.2311fdd3.png": "/greatfilms/static/media/RateStarNoFill.2311fdd3.png",
-    "static/media/StackedMovies.07385105.png": "/greatfilms/static/media/StackedMovies.07385105.png",
-    "static/media/okIcon.b2412597.png": "/greatfilms/static/media/okIcon.b2412597.png"
+    "main.2bc505f3.css.map": "/greatfilms/static/css/main.2bc505f3.css.map",
+    "main.845db010.js.map": "/greatfilms/static/js/main.845db010.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.93d8a333.js",
-    "static/js/2.58de1c64.chunk.js",
-    "static/css/main.2abf3ca2.chunk.css",
-    "static/js/main.4c805345.chunk.js"
+    "static/css/main.2bc505f3.css",
+    "static/js/main.845db010.js"
   ]
 }
