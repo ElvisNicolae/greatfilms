@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/greatfilms/static/css/main.2bc505f3.css",
-    "main.js": "/greatfilms/static/js/main.845db010.js",
+    "main.js": "/greatfilms/static/js/main.1065bc99.js",
     "static/media/StackedMovies.png": "/greatfilms/static/media/StackedMovies.07385105ac06365624e7.png",
     "static/media/AvatarIcon.png": "/greatfilms/static/media/AvatarIcon.d184fa9cd597512d9929.png",
     "static/media/okIcon.png": "/greatfilms/static/media/okIcon.b24125973ef3b73b3b10.png",
@@ -10,10 +10,10 @@
     "static/media/Checked.png": "/greatfilms/static/media/Checked.ca9ed796818cb8331afd.png",
     "index.html": "/greatfilms/index.html",
     "main.2bc505f3.css.map": "/greatfilms/static/css/main.2bc505f3.css.map",
-    "main.845db010.js.map": "/greatfilms/static/js/main.845db010.js.map"
+    "main.1065bc99.js.map": "/greatfilms/static/js/main.1065bc99.js.map"
   },
   "entrypoints": [
     "static/css/main.2bc505f3.css",
-    "static/js/main.845db010.js"
+    "static/js/main.1065bc99.js"
   ]
 }
